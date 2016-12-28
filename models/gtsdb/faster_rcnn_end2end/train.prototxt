@@ -398,6 +398,7 @@ layer {
     bias_filler { type: "constant" value: 0 }
   }
 }
+
 layer {
   name: "rpn_relu/3x3"
   type: "ReLU"
@@ -564,10 +565,6 @@ layer {
   }
 }
 
-#layer{
-#  name: "st_1"
-#}
-
 layer {
   name: "fc6"
   type: "InnerProduct"
@@ -591,15 +588,100 @@ layer {
   bottom: "fc6"
   top: "fc6"
 }
+###########################################################
+# Defining Spatial transformation layer
+layer {
+  name: "st/theta_1"
+  type: "InnerProduct"
+  bottom: "fc6"
+  top: "st/pre_theta_1"
+  param {
+    lr_mult: 0.01
+    decay_mult: 10
+  }
+  param {
+    lr_mult: 0.01
+    decay_mult: 10
+  }
+  inner_product_param {
+    num_output: 2
+    weight_filler {
+      type: "gaussian"
+      std: 0.001
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "st/theta_1_final"
+  type: "PowerFile"
+  bottom: "st/pre_theta_1"
+  top: "st/theta_1"
+  power_file_param {
+    shift_file: "models/gtsdb/faster_rcnn_end2end/bias_init_1.txt"
+  }
+}
+layer {
+  name: "st/theta_1_loss"
+  type: "LocLoss"
+  bottom: "st/theta_1"
+  top: "st/theta_1_loss"
+  loc_loss_param {
+    threshold: 0.5
+  }
+  loss_weight: 0.01
+}
+layer {
+  name: "st_1"
+  type: "SpatialTransformer"
+  bottom: "fc6"
+  bottom: "st/theta_1"
+  top: "inc1/data"
+  st_param {
+    to_compute_dU: false
+    output_H: 224
+    output_W: 224
+    theta_1_1: 0.5
+    theta_1_2: 0
+    theta_2_1: 0
+    theta_2_2: 0.5
+  }
+}
+
+
+
+
+################################################################
 layer {
   name: "drop6"
   type: "Dropout"
-  bottom: "fc6"
+  bottom: "inc1/data"
   top: "fc6"
   dropout_param {
     dropout_ratio: 0.5
   }
 }
+
+# layer {
+#    name: "st_1"
+#    type: "SpatialTransformer"
+#    bottom: "data"
+#    bottom: "st/theta_1"
+#    top: "inc1/data"
+#    st_param {
+#      to_compute_dU: false
+#      output_H: 224
+#      output_W: 224
+#      theta_1_1: 0.5
+#      theta_1_2: 0
+#      theta_2_1: 0
+#      theta_2_2: 0.5
+#    }
+#  }
+
 layer {
   name: "fc7"
   type: "InnerProduct"
