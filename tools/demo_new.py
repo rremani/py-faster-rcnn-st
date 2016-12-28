@@ -24,7 +24,13 @@ import scipy.io as sio
 import caffe, os, sys, cv2
 import argparse
 
-# Classes for the required problem
+'''CLASSES = ('__background__',
+           'aeroplane', 'bicycle', 'bird', 'boat',
+           'bottle', 'bus', 'car', 'cat', 'chair',
+           'cow', 'diningtable', 'dog', 'horse',
+           'motorbike', 'person', 'pottedplant',
+           'sheep', 'sofa', 'train', 'tvmonitor')'''
+
 CLASSES = ('__background__', 'Auto Parking', 'Bump Ahead', 'Bus Stop Ahead', 'Car And Taxi Parking', 'Compulsory Keep Left', 'Cross Road',
                          'Cycle Crossing', 'Divide Two Side', 'Eating Place Ahead', 'Gap In Median', 'Go Slow_red', 'Guarded Railway Crossing',
                          'Handicapped Parking', 'Horn Prohibited', 'Hospital Ahead', 'Left Hand Curve', 'No Parking_blue', 'No Parking_rb', 'No Parking_red',
@@ -33,7 +39,6 @@ CLASSES = ('__background__', 'Auto Parking', 'Bump Ahead', 'Bus Stop Ahead', 'Ca
                          'School Ahead_blue', 'Scooter And Motor Cycle Parking', 'Side Road Left', 'Speed Breaker', 'Stop', 'T Junction', 'U Turn Allow_blue',
                          'Speed Limit 30', 'Speed Limit 50', 'Speed Limit 60', 'Speed Limit 70', 'Speed Limit 80', 'Speed Limit 100', 'Speed Limit 120')
 
-# Models from which classes are going to be predicted
 NETS = {'vgg16': ('VGG16',
                   'VGG16_faster_rcnn_final.caffemodel'),
         'zf': ('ZF',
@@ -42,65 +47,69 @@ NETS = {'vgg16': ('VGG16',
 				'vgg_cnn_m_1024_rpn_stage1_iter_20000.caffemodel'),
 		'gtsdb': ('gtsdb',
 				'3gtsdb_iter_40000.caffemodel'),
-		# 'mmi': ('mmi',
-		# 		'mmi_26_10_iter_60000.caffemodel')}
-        'mmi': ('mmi',
-              'mmi_15_12_iter_2000.caffemodel'),
-        'transfer': ('mmi',
-              'mmi_16_12_transfer_6_5000_iter_5000.caffemodel')}
+		'mmi': ('mmi',
+				'mmi_retrained_23_12.caffemodel')}
 
 
 def vis_detections(im, class_name, dets, image_name,out_file,thresh=0.5):
     """Draw detected bounding boxes."""
     inds = np.where(dets[:, -1] >= thresh)[0]
+   # print inds
     if len(inds) == 0:
-        # print "no detections found!:("
         return
     f=open(out_file,'a')
+    #print image_name
     im = im[:, :, (2, 1, 0)]
-
     fig, ax = plt.subplots(figsize=(12, 12))
     ax.imshow(im, aspect='equal')
     for i in inds:
         bbox = dets[i, :4]
         score = dets[i, -1]
+        #print bbox, score
         ax.add_patch(plt.Rectangle((bbox[0], bbox[1]),bbox[2] - bbox[0],bbox[3] - bbox[1], fill=False,edgecolor='red', linewidth=1.5))
         ax.text(bbox[0], bbox[1] - 2,'{:s} {:.3f}'.format(class_name, score),bbox=dict(facecolor='blue', alpha=0.5),fontsize=14, color='white')
+       # print bbox
         f.write(str(image_name)+';'+str(bbox)+';'+str(class_name)+';'+str(score)+'\n')
+
     ax.set_title(('{} detections with ''p({} | box) >= {:.1f}').format(class_name, class_name,thresh),fontsize=14)
     plt.axis('off')
     plt.tight_layout()
     plt.draw()
-    # name=image_name.split('.')[0][len[name]-6:]
-    name=image_name
+    name=image_name.split('.')[0]
+    #name = os.path.basename(image_name)[:-4]
+    print name
     try:
-        os.mkdir('output_detections_transfer')
+        os.mkdir('output_detections')
     except:
         pass
-    plt.savefig('output_detections_transfer/'+name+'_'+class_name+".png")
+    #print name
+    plt.savefig('output_detections/'+name+'_'+class_name+".png")
     plt.close()
-    # plt.draw()
+    plt.draw()
     f.close()
 
-#def demo(net, image_name,path,out_file):
-def demo(net, image_name,out_file):
+def demo(net, image_name,path,out_file):
+#def demo(net, image_name,out_file):
+
     """Detect object classes in an image using pre-computed object proposals."""
 
     # Load the demo image
-    im_file = os.path.join(path, image_name)
-    # im_file = image_name[:-4] #*
-    #im_file
+    im_file = os.path.join(path, image_name[:-4])
+    #print im_file
+    #im_file = image_name
 
     if os.path.isfile(im_file+'.png'):
+        #im_file = im_file[:-4]
+        #print im_file
         im = cv2.imread(im_file+'.png')
-
 
     elif os.path.isfile(im_file+'.jpg'):
         im = cv2.imread(im_file+'.jpg')
 
     else:
         return 0
-
+    
+   # print im
     # Detect all object classes and regress object bounds
     timer = Timer()
     timer.tic()
@@ -108,6 +117,8 @@ def demo(net, image_name,out_file):
     timer.toc()
     #print np.amax(scores, axis=1)
     #print ('Detection took {:.3f}s for {:d} object proposals').format(timer.total_time, boxes.shape[0])
+
+
 
     # Visualize detections for each class
     CONF_THRESH = 0.5
@@ -146,14 +157,11 @@ if __name__ == '__main__':
 
     args = parse_args()
 
-    prototxt = os.path.join(cfg.MODELS_DIR,'..', NETS[args.demo_net][0],'faster_rcnn_transfer_fcn', 'test.prototxt')
-    # prototxt = os.path.join(cfg.MODELS_DIR,'..', NETS[args.demo_net][0],'faster_rcnn_end2end', 'test.prototxt')
+    prototxt = os.path.join(cfg.MODELS_DIR,'..', NETS[args.demo_net][0],'faster_rcnn_end2end', 'test.prototxt')
 #    prototxt = os.path.join(cfg.MODELS_DIR, NETS[args.demo_net][0],'faster_rcnn_alt_opt', 'faster_rcnn_test.pt')
 
-    caffemodel = os.path.join(cfg.DATA_DIR, 'faster_rcnn_models','transferLearningTESTING',
+    caffemodel = os.path.join(cfg.DATA_DIR, 'faster_rcnn_models',
                               NETS[args.demo_net][1])
-    # caffemodel = os.path.join(cfg.DATA_DIR, 'faster_rcnn_models',
-    #                           NETS[args.demo_net][1])
 
     if not os.path.isfile(caffemodel):
         raise IOError(('{:s} not found.\nDid you run ./data/script/'
@@ -172,7 +180,7 @@ if __name__ == '__main__':
     # Warmup on a dummy image
     im = 128 * np.ones((300, 500, 3), dtype=np.uint8)
     for i in xrange(2):
-        _, _ = im_detect(net, im)
+        _, _= im_detect(net, im)
 
     #path='/home/rishabh/py-faster-rcnn/data/demo'
 
@@ -180,29 +188,27 @@ if __name__ == '__main__':
         f1=open(args.test_file,'r')
         data=f1.read()
         im_names=np.unique(data.split('\n'))
-        #print im_names
-        path = os.getcwd()+'/data/MMI/data/Images/'
+        #path = os.getcwd()+'/data/MMI/data/Images/'
+        #print path
     else:
         im_names=sorted(os.listdir(args.path))
+       # print im_names
         path=args.path
 
     total=len(im_names)
     a=0
-    #demo(net, '/home/ce/Documents/py-faster-rcnn/data/MMI/data/Images2/00000.png',args.out_file)
+    #print im_names
     for im_name in im_names:
         #print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-        print im_name
-        #demo(net, '/home/ce/Documents/py-faster-rcnn/data/MMI/data/Images2/00000.png',args.out_file)
-
+        #print im_name
         try:
-            demo(net,im_name,args.out_file)
-
+           # print im_name
+            demo(net,im_name,path,args.out_file)
+            
         except:
             continue
         print a,'/',total,'Demo for data/demo/{}'.format(im_name)
         a+=1
-        os.getcwd()
-
-       #plt.savefig('output/'+ im_name)
+       # plt.savefig('output/'+im_name)
        # plt.show()
        # continue

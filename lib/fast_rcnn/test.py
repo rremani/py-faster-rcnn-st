@@ -31,7 +31,7 @@ def _get_image_blob(im):
             in the image pyramid
     """
     im_orig = im.astype(np.float32, copy=True)
-    im_orig -= cfg.PIXEL_MEANS
+    #im_orig -= cfg.PIXEL_MEANS
 
     im_shape = im_orig.shape
     im_size_min = np.min(im_shape[0:2])
@@ -152,7 +152,8 @@ def im_detect(net, im, boxes=None):
     else:
         forward_kwargs['rois'] = blobs['rois'].astype(np.float32, copy=False)
     blobs_out = net.forward(**forward_kwargs)
-
+    # print "len(blobsOut):",len(blobs_out)
+    # print "blobsout: ", blobs_out
     if cfg.TEST.HAS_RPN:
         assert len(im_scales) == 1, "Only single-image batch implemented"
         rois = net.blobs['rois'].data.copy()

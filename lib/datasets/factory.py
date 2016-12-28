@@ -12,6 +12,24 @@ __sets = {}
 from datasets.pascal_voc import pascal_voc
 from datasets.coco import coco
 import numpy as np
+from datasets.mmi import mmi
+from datasets.gtsdb import gtsdb
+import os
+
+cwd=os.getcwd()
+
+
+gtsdb_devkit_path = cwd+'/data/GTSDB'
+for split in ['train', 'test']:
+    name = '{}_{}'.format('gtsdb', split)
+    __sets[name] = (lambda split=split: gtsdb(split, gtsdb_devkit_path))
+
+
+
+mmi_devkit_path = cwd+'/data/MMI'
+for split in ['train', 'test']:
+    name = '{}_{}'.format('mmi', split)
+    __sets[name] = (lambda split=split: mmi(split, mmi_devkit_path))
 
 # Set up voc_<year>_<split> using selective search "fast" mode
 for year in ['2007', '2012']:

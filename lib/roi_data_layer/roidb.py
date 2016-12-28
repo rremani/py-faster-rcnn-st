@@ -84,10 +84,10 @@ def add_bbox_regression_targets(roidb):
         stds = np.sqrt(squared_sums / class_counts - means ** 2)
 
     print 'bbox target means:'
-    print means
+    #print means
     print means[1:, :].mean(axis=0) # ignore bg class
     print 'bbox target stdevs:'
-    print stds
+    #print stds
     print stds[1:, :].mean(axis=0) # ignore bg class
 
     # Normalize targets
@@ -129,5 +129,5 @@ def _compute_targets(rois, overlaps, labels):
 
     targets = np.zeros((rois.shape[0], 5), dtype=np.float32)
     targets[ex_inds, 0] = labels[ex_inds]
-    targets[ex_inds, 1:] = bbox_transform(ex_rois, gt_rois)
+    targets[ex_inds, 1:] = gt_rois#bbox_transform(ex_rois, gt_rois)
     return targets
