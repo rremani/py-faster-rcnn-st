@@ -18,11 +18,11 @@ layer {
 #   bottom: "data"
 #   top: "theta"
 #   param {
-#     lr_mult: 0.01
+#     lr_mult: 0.001
 #     decay_mult: 10
 #   }
 #   param {
-#     lr_mult: 0.01
+#     lr_mult: 0.001
 #     decay_mult: 10
 #   }
 #   inner_product_param {
@@ -36,32 +36,33 @@ layer {
 #     }
 #   }
 # }
-#
-# layer {
-#   name: "st/theta_1_final"
-#   type: "PowerFile"
-#   bottom: "theta"
-#   top: "theta_1"
-#   power_file_param {
-#     shift_file: "models/gtsdb/faster_rcnn_end2end/bias_init_1.txt"
-#   }
-# }
+# #
+# # layer {
+# #   name: "st/theta_1_final"
+# #   type: "PowerFile"
+# #   bottom: "theta"
+# #   top: "theta_1"
+# #   power_file_param {
+# #     shift_file: "models/gtsdb/faster_rcnn_end2end/bias_init_1.txt"
+# #   }
+# # }
 # layer {
 #   name: "st_1"
 #   type: "SpatialTransformer"
 #   bottom: "data"
-#   bottom: "theta_1"
+#   bottom: "theta"
 #   top: "data_1"
 #   # st_param {
 #   #   to_compute_dU: false
-#   #   output_H: 224
-#   #   output_W: 224
-#   #   theta_1_1: 0.5
-#   #   theta_1_2: 0
-#   #   theta_2_1: 0
-#   #   theta_2_2: 0.5
+#   #   output_H: 588
+#   #   output_W: 1000
+#   #   # theta_1_1: 0.5
+#   #   # theta_1_2: 0
+#   #   # theta_2_1: 0
+#   #   # theta_2_2: 0.5
 #   # }
 # }
+
 ####################################################################
 layer {
   name: "conv1_1"
@@ -432,7 +433,94 @@ layer {
   bottom: "conv5_3"
   top: "conv5_3"
 }
+#
 
+
+# layer {
+#   name: "st/theta_1"
+#   type: "InnerProduct"
+#   bottom: "conv5_3"
+#   top: "st/theta_1/pre1"
+#   param {
+#     lr_mult: 0.0001
+#     decay_mult: 10
+#   }
+#   param {
+#     lr_mult: 0.0001
+#     decay_mult: 10
+#   }
+#   inner_product_param {
+#     num_output: 6
+#     weight_filler {
+#       type: "gaussian"
+#       std: 0.001
+#     }
+#     bias_filler {
+#       type: "constant"
+#     }
+#   }
+# }
+# layer {
+#   name: "st/theta_1/final"
+#   type: "PowerFile"
+#   bottom: "st/theta_1/pre1"
+#   top: "st/theta_1"
+#   power_file_param {
+#     shift_file: "models/googlenet-bn-cub-st/crop_init_1.txt"
+#   }
+# }
+# layer {
+#   name: "st/theta_1_loss"
+#   type: "LocLoss"
+#   bottom: "st/theta_1"
+#   top: "st/theta_1_loss"
+#   loc_loss_param {
+#     threshold: 0.5
+#   }
+#   loss_weight: 0.0001
+# }
+# layer {
+#   name: "st_1"
+#   type: "SpatialTransformer"
+#   bottom: "data"
+#   bottom: "st/theta_1/pre1"
+#   top: "inc1/data"
+#    st_param {
+#      to_compute_dU: false
+#      output_H: 38
+#      output_W: 63
+#   #   # theta_1_1: 0.5
+#   #   # theta_1_2: 0.0
+#   #   # theta_2_1: 0.0
+#   #   # theta_2_2: 0.5
+#    }
+# }
+# layer {
+#   name: "conv44_1"
+#   type: "Convolution"
+#   bottom: "inc1/data"
+#   top: "conv44"
+#   param {
+#     lr_mult: 1
+#   }
+#   param {
+#     lr_mult: 2
+#   }
+#   convolution_param {
+#     num_output: 512
+#     pad: 1
+#     kernel_size: 3
+# 	weight_filler { type: "gaussian" std: 0.01 }
+#     bias_filler { type: "constant" value: 1 }
+#   }
+# }
+# layer {
+#   name: "relu55"
+#   type: "ReLU"
+#   bottom: "conv44"
+#   top: "conv44"
+# }
+#
 #========= RPN ============
 
 layer {
@@ -456,7 +544,9 @@ layer {
   bottom: "rpn/output"
   top: "rpn/output"
 }
+#
 
+#
 layer {
   name: "rpn_cls_score"
   type: "Convolution"
@@ -475,7 +565,7 @@ layer {
 layer {
   name: "rpn_bbox_pred"
   type: "Convolution"
-  bottom: "rpn/output"
+  bottom:"rpn/output"
   top: "rpn_bbox_pred"
   param { lr_mult: 1.0 }
   param { lr_mult: 2.0 }
@@ -616,69 +706,71 @@ layer {
   }
 }
 #
-layer {
-  name: "st/theta_1"
-  type: "InnerProduct"
-  bottom: "pool5"
-  top: "st/theta_1/pre1"
-  param {
-    lr_mult: 0.001
-    decay_mult: 10
-  }
-  param {
-    lr_mult: 0.001
-    decay_mult: 10
-  }
-  inner_product_param {
-    num_output: 2
-    weight_filler {
-      type: "gaussian"
-      std: 0.001
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-layer {
-  name: "st/theta_1/final"
-  type: "PowerFile"
-  bottom: "st/theta_1/pre1"
-  top: "st/theta_1"
-  power_file_param {
-    shift_file: "models/googlenet-bn-cub-st/crop_init_1.txt"
-  }
-}
-layer {
-  name: "st/theta_1_loss"
-  type: "LocLoss"
-  bottom: "st/theta_1"
-  top: "st/theta_1_loss"
-  loc_loss_param {
-    threshold: 0.5
-  }
-  loss_weight: 0.0001
-}
-layer {
-  name: "st_1"
-  type: "SpatialTransformer"
-  bottom: "pool5"
-  bottom: "st/theta_1"
-  top: "inc1/data"
-  st_param {
-    to_compute_dU: true
-    theta_1_1: 0.5
-    theta_1_2: 0.0
-    theta_2_1: 0.0
-    theta_2_2: 0.5
-  }
-}
+# layer {
+#   name: "st/theta_1"
+#   type: "InnerProduct"
+#   bottom: "pool5"
+#   top: "st/theta_1/pre1"
+#   param {
+#     lr_mult: 0.0001
+#     decay_mult: 10
+#   }
+#   param {
+#     lr_mult: 0.0001
+#     decay_mult: 10
+#   }
+#   inner_product_param {
+#     num_output: 6
+#     weight_filler {
+#       type: "gaussian"
+#       std: 0.001
+#     }
+#     bias_filler {
+#       type: "constant"
+#     }
+#   }
+# }
+# # layer {
+# #   name: "st/theta_1/final"
+# #   type: "PowerFile"
+# #   bottom: "st/theta_1/pre1"
+# #   top: "st/theta_1"
+# #   power_file_param {
+# #     shift_file: "models/googlenet-bn-cub-st/crop_init_1.txt"
+# #   }
+# # }
+# layer {
+#   name: "st/theta_1_loss"
+#   type: "LocLoss"
+#   bottom: "st/theta_1/pre1"
+#   top: "st/theta_1_loss"
+#   loc_loss_param {
+#     threshold: 0.5
+#   }
+#   loss_weight: 0.0001
+# }
+# layer {
+#   name: "st_1"
+#   type: "SpatialTransformer"
+#   bottom: "pool5"
+#   bottom: "st/theta_1/pre1"
+#   top: "inc1/data"
+#   st_param {
+#     to_compute_dU: false
+#     output_H: 7
+#     output_W: 7
+#     # theta_1_1: 0.5
+#     # theta_1_2: 0.0
+#     # theta_2_1: 0.0
+#     # theta_2_2: 0.5
+#   }
+# }
 
 #
 layer {
   name: "fc6"
   type: "InnerProduct"
-  bottom: "inc1/data"#"pool5"
+  bottom:"pool5"#"inc1/data"
   top: "fc6"
   param {
     lr_mult: 1
@@ -707,11 +799,52 @@ layer {
     dropout_ratio: 0.5
   }
 }
+layer {
+  name: "st/theta_1"
+  type: "InnerProduct"
+  bottom: "fc6"
+  top: "st/theta_1/pre1"
+  param {
+    lr_mult: 0.0001
+    decay_mult: 10
+  }
+  param {
+    lr_mult: 0.0001
+    decay_mult: 10
+  }
+  inner_product_param {
+    num_output: 6
+    weight_filler {
+      type: "gaussian"
+      std: 0.001
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "st_1"
+  type: "SpatialTransformer"
+  bottom: "fc6"
+  bottom: "st/theta_1/pre1"
+  top: "inc1/data"
+  # st_param {
+  #   to_compute_dU: false
+  #   output_H: 7
+  #   output_W: 7
+  #   # theta_1_1: 0.5
+  #   # theta_1_2: 0.0
+  #   # theta_2_1: 0.0
+  #   # theta_2_2: 0.5
+  # }
+}
+
 
 layer {
   name: "fc7"
   type: "InnerProduct"
-  bottom: "fc6"
+  bottom: "inc1/data"
   top: "fc7"
   param {
     lr_mult: 1

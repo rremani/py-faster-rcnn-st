@@ -19,6 +19,10 @@ to train the CNN model
 ./tools/train_net.py --gpu 0 --solver models/mmi/faster_rcnn_end2end/solver.prototxt --imdb mmi_train --cfg experiments/cfgs/faster_rcnn_end2end.yml --weights data/faster_rcnn_models/VGG16_faster_rcnn_final.caffemodel --iters 60000 >> out_mmi
 
 
+./tools/train_net.py --gpu 0 --solver models/gtsdb/faster_rcnn_end2end/solver.prototxt --imdb gtsdb_train --cfg experiments/cfgs/faster_rcnn_end2end.yml --weights data/faster_rcnn_models/VGG16_faster_rcnn_final.caffemodel --iters 60000 >> out_mmi
+
+
+
 to test the CNN model
 to create test.txt use accuracy notebook
 ./tools/demo.py --gpu 0 --net mmi --file /home/rishabh/py-faster-rcnn/data/MMI/data/test.txt --out_file out_mmi.txt
