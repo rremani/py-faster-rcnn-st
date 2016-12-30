@@ -52,18 +52,25 @@ NETS = {'vgg16': ('VGG16',
 
 
 def get_overlap(l1,l2):
+    l1=(l1).tolist()
+    l2=(l2).tolist()
+    #print l1
     xa1,ya1,xa2,ya2=l1[0],l1[1],l1[2],l1[3]
-    xb1,yb1,xb2,yb2=l2[0],l2[1],l2[2],l2[3]
-    dx = min(xa2, xb2) - max(xa1, xb1)
-    dy = min(ya2, yb2) - max(ya1, yb1)
-    area_a=(xa2-xa1)*(ya2-ya1)
-    area_b=(xb2-xb1)*(yb2-yb1)
-    if (dx>=0) and (dy>=0):
-        area_i= dx*dy
-        area=area_a+area_b-area_i
-        return float(area_i)/area
-    else:
-        return 0
+    # xb1,yb1,xb2,yb2=l2[0],l2[1],l2[2],l2[3]
+    print xa1
+    # dx = min(xa2, xb2) - max(xa1, xb1)
+    # dy = min(ya2, yb2) - max(ya1, yb1)
+    #print dx
+    # area_a=(xa2-xa1)*(ya2-ya1)
+    # area_b=(xb2-xb1)*(yb2-yb1)
+    # if (dx>=0) and (dy>=0):
+    #     area_i= dx*dy
+    #     area=area_a+area_b-area_i
+    #
+    #     return float(area_i)/area
+    # else:
+    #     return 0
+    # return dx
 def vis_detections(im, class_name, dets, image_name,out_file,thresh=0.5):
     """Draw detected bounding boxes."""
     inds = np.where(dets[:, -1] >= thresh)[0]
@@ -79,45 +86,84 @@ def vis_detections(im, class_name, dets, image_name,out_file,thresh=0.5):
 
     s=[]
     h=[]
-    for j in inds:
-        if len(inds>0):
+    print len(inds)
+    if len(inds)>1:
+        for j in inds:
+                #print j
+                for k in inds:
+                    print j,k
+                    # if k==j:
+                    #     continue
+                    bbox1=dets[j,-4]
+                    bbox2=dets[k,-4]
+                    # #if bbox1 not in bbox2:
+                    get_overlap(bbox1,bbox2)
+                    # print area
+                    #
+                    # if area==0:
+                    #     pass
+                    # else:
+                    #     #h.append(area)
+                    #     score = dets[j, -1]
+                    #     s.append(score)
+                    #     h.append(k)
+                    #     #t1=np.argmax(h)
+                    #     t = max(s)
+                    #     print h
+        for i in inds:
+            bbox = dets[i, :4]
+            score = dets[i, -1]
+            #f.write(str(image_name)+';'+str(bbox)+';'+str(class_name)+';'+str(score)+'\n')
+            if score>=t and i in h:
+                ax.add_patch(plt.Rectangle((bbox[0], bbox[1]),bbox[2] - bbox[0],bbox[3] - bbox[1], fill=False,edgecolor='red', linewidth=1.5))
+                ax.text(bbox[0], bbox[1] - 2,'{:s} {:.3f}'.format(class_name, score),bbox=dict(facecolor='blue', alpha=0.5),fontsize=14, color='white')
+                f.write(str(image_name)+';'+str(bbox)+';'+str(class_name)+';'+str(score)+'\n')
+            elif i not in h:
+                ax.add_patch(plt.Rectangle((bbox[0], bbox[1]),bbox[2] - bbox[0],bbox[3] - bbox[1], fill=False,edgecolor='red', linewidth=1.5))
+                ax.text(bbox[0], bbox[1] - 2,'{:s} {:.3f}'.format(class_name, score),bbox=dict(facecolor='blue', alpha=0.5),fontsize=14, color='white')
+                f.write(str(image_name)+';'+str(bbox)+';'+str(class_name)+';'+str(score)+'\n')
 
-            for k in inds:
-                bbox1=dets[j,-4]
-                bbox2=dets[k,-4]
-                area=get_overlap(bbox1,bbox2)
+        ax.set_title(('{} detections with ''p({} | box) >= {:.1f}').format(class_name, class_name,thresh),fontsize=14)
+        plt.axis('off')
+        plt.tight_layout()
+        plt.draw()
+        name=image_name.split('.')[0]
+        ##name = os.path.basename(image_name)[:-4]
+        ##print name
 
-                if area==0:
-                    break
-                else:
-                    t=0
-        else:
-            score = dets[j, -1]
-            s.append(score)
-            t= max(s)
+        plt.savefig('output_detections/'+name+'_'+class_name+'_'+str(i)+".png")
+        plt.close()
+        plt.draw()
+        f.close()
 
-    for i in inds:
-        bbox = dets[i, :4]
-        score = dets[i, -1]
-        f.write(str(image_name)+';'+str(bbox)+';'+str(class_name)+';'+str(score)+'\n')
-        if score>=t:
+    else:
+        # score = dets[j, -1]
+        # s.append(score)
+        # t= max(s)
+
+        for i in inds:
+            bbox = dets[i, :4]
+            score = dets[i, -1]
+            print bbox
+            f.write(str(image_name)+';'+str(bbox)+';'+str(class_name)+';'+str(score)+'\n')
+            # if score>=t:
             ax.add_patch(plt.Rectangle((bbox[0], bbox[1]),bbox[2] - bbox[0],bbox[3] - bbox[1], fill=False,edgecolor='red', linewidth=1.5))
             ax.text(bbox[0], bbox[1] - 2,'{:s} {:.3f}'.format(class_name, score),bbox=dict(facecolor='blue', alpha=0.5),fontsize=14, color='white')
-            break
+            # break
 
 
-    ax.set_title(('{} detections with ''p({} | box) >= {:.1f}').format(class_name, class_name,thresh),fontsize=14)
-    plt.axis('off')
-    plt.tight_layout()
-    plt.draw()
-    name=image_name.split('.')[0]
-    ##name = os.path.basename(image_name)[:-4]
-    ##print name
+        ax.set_title(('{} detections with ''p({} | box) >= {:.1f}').format(class_name, class_name,thresh),fontsize=14)
+        plt.axis('off')
+        plt.tight_layout()
+        plt.draw()
+        name=image_name.split('.')[0]
+        ##name = os.path.basename(image_name)[:-4]
+        ##print name
 
-    plt.savefig('output_detections/'+name+'_'+class_name+'_'+str(i)+".png")
-    plt.close()
-    plt.draw()
-    f.close()
+        plt.savefig('output_detections/'+name+'_'+class_name+'_'+str(i)+".png")
+        plt.close()
+        plt.draw()
+        f.close()
 
 def demo(net, image_name,path,out_file):
 #def demo(net, image_name,out_file):

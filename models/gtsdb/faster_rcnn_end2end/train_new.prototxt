@@ -14,147 +14,13 @@ layer {
   	crop_size:600
   }
 }
-#######################################################
-#SPATIAL TRANSFORM NETWORK
-
-layer {
-  name: "loc_conv1"
-  type: "Convolution"
-  bottom: "data"
-  top: "loc_conv1"
-  convolution_param {
-    num_output: 20
-    kernel_size: 5
-    pad:2
-    stride: 1
-    #weight_filler {
-    #  type: "xavier"
-    #}
-    #bias_filler {
-    #  type: "constant"
-    #}
-    weight_filler { type: "gaussian" std: 0.01 }
-    bias_filler { type: "constant" value: 1 }
-  }
-}
-layer {
-  name: "loc_pool1"
-  type: "Pooling"
-  bottom: "loc_conv1"
-  top: "loc_pool1"
-  pooling_param {
-    pool: MAX
-    kernel_size: 2
-    stride: 2
-  }
-}
-layer {
-  name: "loc_relu1"
-  type: "ReLU"
-  bottom: "loc_pool1"
-  top: "loc_pool1"
-}
-layer {
-  name: "loc_conv2"
-  type: "Convolution"
-  bottom: "loc_pool1"
-  top: "loc_conv2"
-  convolution_param {
-    num_output: 20
-    kernel_size: 5
-    stride: 1
-    pad:2
-    #weight_filler {
-    #  type: "xavier"
-    #}
-    #bias_filler {
-    #  type: "constant"
-    #}
-    weight_filler { type: "gaussian" std: 0.01 }
-    bias_filler { type: "constant" value: 1 }
-  }
-}
-layer {
-  name: "loc_pool2"
-  type: "Pooling"
-  bottom: "loc_conv2"
-  top: "loc_pool2"
-  pooling_param {
-    pool: MAX
-    kernel_size: 2
-    stride: 2
-  }
-}
-layer {
-  name: "loc_relu2"
-  type: "ReLU"
-  bottom: "loc_pool2"
-  top: "loc_pool2"
-}
-
-layer {
-  name: "loc_ip1"
-  type: "InnerProduct"
-  bottom: "loc_pool2"
-  top: "loc_ip1"
-  param {
-    lr_mult: 1
-  }
-  param {
-    lr_mult: 2
-  }
-  inner_product_param {
-    num_output: 20
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-    #weight_filler { type: "gaussian" std: 0.01 }
-    #bias_filler { type: "constant" value: 1 }
-  }
-}
-layer {
-  name: "loc_relu3"
-  type: "ReLU"
-  bottom: "loc_ip1"
-  top: "loc_ip1"
-}
-layer {
-  name: "loc_reg"
-  type: "InnerProduct"
-  bottom: "loc_ip1"
-  top: "theta"
-  inner_product_param {
-    num_output: 6
-    #weight_filler {
-    #  type: "constant"
-    #  value: 0
-    #}
-    #bias_filler {
-    #  type: "file"
-    #  file: "examples/mnist_tests/bias_init.txt"
-    #}
-    weight_filler { type: "gaussian" std: 0.01 }
-    bias_filler { type: "constant" value: 1 }
-  }
-}
-layer {
-  name: "st_layer"
-  type: "SpatialTransformer"
-  bottom: "data"
-  bottom: "theta"
-  top: "st_output"
-}
-######################################################
 
 ############################################
 #Convolutions
 layer {
   name: "conv1_1"
   type: "Convolution"
-  bottom: "st_output"
+  bottom: "data"
   top: "conv1_1"
   param {
     lr_mult: 1
@@ -588,7 +454,7 @@ layer {
   bottom: 'rpn_cls_score'
   bottom: 'gt_boxes'
   bottom: 'im_info'
-  bottom: 'st_output'
+  bottom: 'data'
   top: 'rpn_labels'
   top: 'rpn_bbox_targets'
   top: 'rpn_bbox_inside_weights'
@@ -690,6 +556,7 @@ layer {
 }
 
 
+
 #========= RCNN ============
 
 layer {
@@ -705,10 +572,72 @@ layer {
   }
 }
 
+
+#######################################################
+#SPATIAL TRANSFORM NETWORK
+
+layer {
+  name: "loc_ip1"
+  type: "InnerProduct"
+  bottom: "pool5"
+  top: "loc_ip1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 4096
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+    #weight_filler { type: "gaussian" std: 0.01 }
+    #bias_filler { type: "constant" value: 1 }
+  }
+}
+layer {
+  name: "loc_relu3"
+  type: "ReLU"
+  bottom: "loc_ip1"
+  top: "loc_ip1"
+}
+layer {
+  name: "loc_reg"
+  type: "InnerProduct"
+  bottom: "loc_ip1"
+  top: "theta"
+  inner_product_param {
+    num_output: 6
+    #weight_filler {
+    #  type: "constant"
+    #  value: 0
+    #}
+    #bias_filler {
+    #  type: "file"
+    #  file: "examples/mnist_tests/bias_init.txt"
+    #}
+    weight_filler { type: "gaussian" std: 0.01 }
+    bias_filler { type: "constant" value: 1 }
+  }
+}
+layer {
+  name: "st_layer"
+  type: "SpatialTransformer"
+  bottom: "pool5"
+  bottom: "theta"
+  top: "st_output"
+}
+######################################################
+
+
 layer {
   name: "fc6"
   type: "InnerProduct"
-  bottom: "pool5"
+  bottom: "st_output"
   top: "fc6"
   param {
     lr_mult: 1
@@ -722,6 +651,7 @@ layer {
     bias_filler { type: "constant" value: 1 }
   }
 }
+
 layer {
   name: "relu6"
   type: "ReLU"
@@ -737,6 +667,7 @@ layer {
     dropout_ratio: 0.5
   }
 }
+
 layer {
   name: "fc7"
   type: "InnerProduct"
