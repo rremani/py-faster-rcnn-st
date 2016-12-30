@@ -25,7 +25,6 @@ for split in ['train', 'test']:
     __sets[name] = (lambda split=split: gtsdb(split, gtsdb_devkit_path))
 
 
-
 mmi_devkit_path = cwd+'/data/MMI'
 for split in ['train', 'test']:
     name = '{}_{}'.format('mmi', split)

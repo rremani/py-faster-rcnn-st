@@ -48,13 +48,26 @@ NETS = {'vgg16': ('VGG16',
 		'gtsdb': ('gtsdb',
 				'3gtsdb_iter_40000.caffemodel'),
 		'mmi': ('mmi',
-				'mmi_retrained_23_12.caffemodel')}
+				'mmi_26_10_iter_60000.caffemodel')}
 
 
+def get_overlap(l1,l2):
+    xa1,ya1,xa2,ya2=l1[0],l1[1],l1[2],l1[3]
+    xb1,yb1,xb2,yb2=l2[0],l2[1],l2[2],l2[3]
+    dx = min(xa2, xb2) - max(xa1, xb1)
+    dy = min(ya2, yb2) - max(ya1, yb1)
+    area_a=(xa2-xa1)*(ya2-ya1)
+    area_b=(xb2-xb1)*(yb2-yb1)
+    if (dx>=0) and (dy>=0):
+        area_i= dx*dy
+        area=area_a+area_b-area_i
+        return float(area_i)/area
+    else:
+        return 0
 def vis_detections(im, class_name, dets, image_name,out_file,thresh=0.5):
     """Draw detected bounding boxes."""
     inds = np.where(dets[:, -1] >= thresh)[0]
-   # print inds
+    #print len(inds)
     if len(inds) == 0:
         return
     f=open(out_file,'a')
@@ -62,28 +75,46 @@ def vis_detections(im, class_name, dets, image_name,out_file,thresh=0.5):
     im = im[:, :, (2, 1, 0)]
     fig, ax = plt.subplots(figsize=(12, 12))
     ax.imshow(im, aspect='equal')
+    print inds
+
+    s=[]
+    h=[]
+    for j in inds:
+        if len(inds>0):
+
+            for k in inds:
+                bbox1=dets[j,-4]
+                bbox2=dets[k,-4]
+                area=get_overlap(bbox1,bbox2)
+
+                if area==0:
+                    break
+                else:
+                    t=0
+        else:
+            score = dets[j, -1]
+            s.append(score)
+            t= max(s)
+
     for i in inds:
         bbox = dets[i, :4]
         score = dets[i, -1]
-        #print bbox, score
-        ax.add_patch(plt.Rectangle((bbox[0], bbox[1]),bbox[2] - bbox[0],bbox[3] - bbox[1], fill=False,edgecolor='red', linewidth=1.5))
-        ax.text(bbox[0], bbox[1] - 2,'{:s} {:.3f}'.format(class_name, score),bbox=dict(facecolor='blue', alpha=0.5),fontsize=14, color='white')
-       # print bbox
         f.write(str(image_name)+';'+str(bbox)+';'+str(class_name)+';'+str(score)+'\n')
+        if score>=t:
+            ax.add_patch(plt.Rectangle((bbox[0], bbox[1]),bbox[2] - bbox[0],bbox[3] - bbox[1], fill=False,edgecolor='red', linewidth=1.5))
+            ax.text(bbox[0], bbox[1] - 2,'{:s} {:.3f}'.format(class_name, score),bbox=dict(facecolor='blue', alpha=0.5),fontsize=14, color='white')
+            break
+
 
     ax.set_title(('{} detections with ''p({} | box) >= {:.1f}').format(class_name, class_name,thresh),fontsize=14)
     plt.axis('off')
     plt.tight_layout()
     plt.draw()
     name=image_name.split('.')[0]
-    #name = os.path.basename(image_name)[:-4]
-    print name
-    try:
-        os.mkdir('output_detections')
-    except:
-        pass
-    #print name
-    plt.savefig('output_detections/'+name+'_'+class_name+".png")
+    ##name = os.path.basename(image_name)[:-4]
+    ##print name
+
+    plt.savefig('output_detections/'+name+'_'+class_name+'_'+str(i)+".png")
     plt.close()
     plt.draw()
     f.close()
@@ -108,8 +139,8 @@ def demo(net, image_name,path,out_file):
 
     else:
         return 0
-    
-   # print im
+
+    #print im
     # Detect all object classes and regress object bounds
     timer = Timer()
     timer.tic()
@@ -144,7 +175,7 @@ def parse_args():
                         action='store_true')
     parser.add_argument('--net', dest='demo_net', help='Network to use [vgg16]',
                         choices=NETS.keys(), default='vgg16')
-    parser.add_argument('--path',dest='path',help='Path the test images folder',default='/home/ce/Documents/py-faster-rcnn/data/MMI/data/Images2/')
+    parser.add_argument('--path',dest='path',help='Path the test images folder',default='/home/ce/Documents/py-faster-rcnn/data/MMI/data/test-images/')
     parser.add_argument('--file',dest='test_file',help='Path the test images txt file')
     parser.add_argument('--out_file',dest='out_file',help='Path the results')
 
@@ -156,7 +187,11 @@ if __name__ == '__main__':
     cfg.TEST.HAS_RPN = True  # Use RPN for proposals
 
     args = parse_args()
-
+    try:
+        os.mkdir('output_detections')
+    except:
+        pass
+    #print name
     prototxt = os.path.join(cfg.MODELS_DIR,'..', NETS[args.demo_net][0],'faster_rcnn_end2end', 'test.prototxt')
 #    prototxt = os.path.join(cfg.MODELS_DIR, NETS[args.demo_net][0],'faster_rcnn_alt_opt', 'faster_rcnn_test.pt')
 
@@ -203,8 +238,9 @@ if __name__ == '__main__':
         #print im_name
         try:
            # print im_name
+            #im_name = im_name[:-4]
             demo(net,im_name,path,args.out_file)
-            
+
         except:
             continue
         print a,'/',total,'Demo for data/demo/{}'.format(im_name)

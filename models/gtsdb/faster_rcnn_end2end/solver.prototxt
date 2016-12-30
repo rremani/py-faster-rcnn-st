@@ -1,4 +1,4 @@
-train_net: "models/gtsdb/faster_rcnn_end2end/train.prototxt"
+train_net: "models/gtsdb/faster_rcnn_end2end/train_new.prototxt"
 base_lr: 0.005
 # Other lr_policy which can be used are multistep, fixed, inv, poly etc
 lr_policy: "step"
@@ -13,5 +13,5 @@ weight_decay: 0.0005
 # function
 snapshot: 0
 # We still use the snapshot prefix, though
-snapshot_prefix: "gtsdb_27_12_lr_0.005"
+snapshot_prefix: "gtsdb_30_12_lr_0.005"
 iter_size: 10

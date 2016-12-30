@@ -69,6 +69,10 @@ void InnerProductLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,
   // The top shape will be the bottom shape with the flattened axes dropped,
   // and replaced by a single axis with dimension num_output (N_).
   vector<int> top_shape = bottom[0]->shape();
+  //Added by Aishwarya
+  // printf("top_shape: \n");
+  // for(int i = 0 ; i < top_shape.size();i++) printf("(%d): %d\n", i,top_shape[i]);
+  
   top_shape.resize(axis + 1);
   top_shape[axis] = N_;
   top[0]->Reshape(top_shape);

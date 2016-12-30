@@ -80,6 +80,7 @@ class mmi(imdb):
                 'Path does not exist: {}'.format(image_set_file)
         with open(image_set_file) as f:
             image_index = [x.strip() for x in f.readlines()]
+        print 'imageindex: ',image_index
         return image_index
 
     def gt_roidb(self):
