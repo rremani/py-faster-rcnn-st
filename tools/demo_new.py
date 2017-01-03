@@ -94,7 +94,7 @@ def vis_detections(im, class_name, dets, image_name,out_file,thresh=0.5):
     fig, ax = plt.subplots(figsize=(12, 12))
 
     ax.imshow(im, aspect='equal')
-    print inds
+    print inds,len(inds)
     s=[]
     for j in inds:
     	score1=dets[j,-1]
@@ -107,7 +107,7 @@ def vis_detections(im, class_name, dets, image_name,out_file,thresh=0.5):
             bbox2=dets[l, :4]
             area=get_overlap(bbox1,bbox2)
             h[k,l]=area
-
+    #print len(inds)
     for i in inds:
         bbox = dets[i, :4]
         score = dets[i, -1]
@@ -116,14 +116,14 @@ def vis_detections(im, class_name, dets, image_name,out_file,thresh=0.5):
         over_lapped=np.where(h_area>0.2)[0]
         over_lapped = over_lapped.tolist()
 
-        print over_lapped
+        #print over_lapped
 
 
         s_new = np.array(s)[over_lapped]
         t=np.max(s_new)
         z=np.argmax(s_new)
         max_lapped = over_lapped[z] #index of the max score under lapped regions
-        print max_lapped
+        #print max_lapped
 
         if len(over_lapped)==1:
 
