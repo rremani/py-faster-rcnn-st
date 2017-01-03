@@ -510,6 +510,7 @@ layer {
   reshape_param { shape { dim: 0 dim: 18 dim: -1 dim: 0 } }
 }
 
+
 layer {
   name: 'proposal'
   type: 'Python'
@@ -555,6 +556,7 @@ layer {
 }
 
 
+
 #========= RCNN ============
 
 layer {
@@ -570,10 +572,93 @@ layer {
   }
 }
 
+
+#######################################################
+#SPATIAL TRANSFORM NETWORK
+layer {
+  name: "st/conv"
+  type: "Convolution"
+  bottom: "pool5"
+  top: "st/conv"
+  param { lr_mult: 1.0 }
+  param { lr_mult: 2.0 }
+  convolution_param {
+    num_output: 1024 #number of thetas 
+    kernel_size: 1 pad: 0 stride: 1
+    weight_filler { type: "gaussian" std: 0.01 }
+    bias_filler { type: "constant" value: 0 }
+  }
+}
+layer {
+  name: "st/theta_1"
+  type: "InnerProduct"
+  bottom: "st/conv"
+  top: "st/pre_theta_1"
+  param {
+    lr_mult: 1
+    decay_mult: 100
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 100
+  }
+  inner_product_param {
+    num_output: 2
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "st/theta_1_loss"
+  type: "LocLoss"
+  bottom: "st/pre_theta_1"
+  top: "st/theta_1_loss"
+  loc_loss_param {
+    threshold: 0.5
+  }
+  loss_weight: 0.01
+}
+layer {
+  name: "st_1"
+  type: "SpatialTransformer"
+  bottom: "st/conv"
+  bottom: "st/pre_theta_1"
+  top: "inc1/data"
+  st_param {
+    theta_1_1: 0.5
+    theta_1_2: 0.3
+    theta_2_1: 0.3
+    theta_2_2: 0.5
+    #theta_1_3: 0.1
+    #theta_2_3: 0.1
+  }
+}
+layer {
+  name: "st/conv_out"
+  type: "Convolution"
+  bottom: "inc1/data"
+  top: "st/conv_out"
+  param { lr_mult: 1.0 }
+  param { lr_mult: 2.0 }
+  convolution_param {
+    num_output: 512 #originalpool5 out size 
+    kernel_size: 1 pad: 0 stride: 1
+    weight_filler { type: "gaussian" std: 0.01 }
+    bias_filler { type: "constant" value: 0 }
+  }
+}
+######################################################
+
 layer {
   name: "fc6"
   type: "InnerProduct"
-  bottom: "pool5"
+  bottom: "inc1/data"
   top: "fc6"
   param {
     lr_mult: 1
@@ -587,6 +672,7 @@ layer {
     bias_filler { type: "constant" value: 1 }
   }
 }
+
 layer {
   name: "relu6"
   type: "ReLU"
@@ -602,6 +688,7 @@ layer {
     dropout_ratio: 0.5
   }
 }
+
 layer {
   name: "fc7"
   type: "InnerProduct"

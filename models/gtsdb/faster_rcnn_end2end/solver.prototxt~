@@ -1,5 +1,5 @@
 train_net: "models/gtsdb/faster_rcnn_end2end/train_new.prototxt"
-base_lr: 0.00001
+base_lr: 0.001
 # Other lr_policy which can be used are multistep, fixed, inv, poly etc
 lr_policy: "step"
 gamma: 0.1
@@ -13,5 +13,5 @@ weight_decay: 0.0005
 # function
 snapshot: 0
 # We still use the snapshot prefix, though
-snapshot_prefix: "gtsdb_2_1_lr_0.00001_LOCLOSS_ST_conv_in6_out512_modified_classes_relu"
+snapshot_prefix: "gtsdb_31_12_lr_0.001_LOCLOSS"
 iter_size: 10

@@ -1,0 +1,586 @@
+I1231 14:50:02.832171 12829 sgd_solver.cpp:106] Iteration 1, lr = 0.001
+I1231 14:50:05.235697 12829 solver.cpp:228] Iteration 2, loss = 0.492781
+I1231 14:50:05.235741 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00173856 (* 1 = 0.00173856 loss)
+I1231 14:50:05.235749 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.658956 (* 2 = 1.31791 loss)
+I1231 14:50:05.235757 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.152587 (* 1 = 0.152587 loss)
+I1231 14:50:05.235776 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.110556 (* 1 = 0.110556 loss)
+I1231 14:50:05.235782 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 1.86044e-05 (* 0.01 = 1.86044e-07 loss)
+I1231 14:50:05.235802 12829 sgd_solver.cpp:106] Iteration 2, lr = 0.001
+I1231 14:50:07.643863 12829 solver.cpp:228] Iteration 3, loss = 0.371632
+I1231 14:50:07.643908 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00159596 (* 1 = 0.00159596 loss)
+I1231 14:50:07.643931 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.16139 (* 2 = 0.32278 loss)
+I1231 14:50:07.643939 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.418441 (* 1 = 0.418441 loss)
+I1231 14:50:07.643946 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.165996 (* 1 = 0.165996 loss)
+I1231 14:50:07.643952 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.00109726 (* 0.01 = 1.09726e-05 loss)
+I1231 14:50:07.643971 12829 sgd_solver.cpp:106] Iteration 3, lr = 0.001
+I1231 14:50:10.050616 12829 solver.cpp:228] Iteration 4, loss = 0.708664
+I1231 14:50:10.050659 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00469813 (* 1 = 0.00469813 loss)
+I1231 14:50:10.050681 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.157136 (* 2 = 0.314273 loss)
+I1231 14:50:10.050689 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.336876 (* 1 = 0.336876 loss)
+I1231 14:50:10.050696 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.414072 (* 1 = 0.414072 loss)
+I1231 14:50:10.050715 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.00101749 (* 0.01 = 1.01749e-05 loss)
+I1231 14:50:10.050722 12829 sgd_solver.cpp:106] Iteration 4, lr = 0.001
+I1231 14:50:12.428660 12829 solver.cpp:228] Iteration 5, loss = 0.766974
+I1231 14:50:12.428691 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00122376 (* 1 = 0.00122376 loss)
+I1231 14:50:12.428700 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0432866 (* 2 = 0.0865732 loss)
+I1231 14:50:12.428707 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.2512 (* 1 = 0.2512 loss)
+I1231 14:50:12.428714 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.270888 (* 1 = 0.270888 loss)
+I1231 14:50:12.428720 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.000269341 (* 0.01 = 2.69341e-06 loss)
+I1231 14:50:12.428727 12829 sgd_solver.cpp:106] Iteration 5, lr = 0.001
+I1231 14:50:14.818876 12829 solver.cpp:228] Iteration 6, loss = 0.842317
+I1231 14:50:14.818923 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00490041 (* 1 = 0.00490041 loss)
+I1231 14:50:14.818933 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.421167 (* 2 = 0.842334 loss)
+I1231 14:50:14.818939 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.38555 (* 1 = 0.38555 loss)
+I1231 14:50:14.818945 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.778188 (* 1 = 0.778188 loss)
+I1231 14:50:14.818964 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.000216636 (* 0.01 = 2.16636e-06 loss)
+I1231 14:50:14.818984 12829 sgd_solver.cpp:106] Iteration 6, lr = 0.001
+I1231 14:50:17.204993 12829 solver.cpp:228] Iteration 7, loss = 0.572453
+I1231 14:50:17.205037 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00616417 (* 1 = 0.00616417 loss)
+I1231 14:50:17.205060 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0484879 (* 2 = 0.0969759 loss)
+I1231 14:50:17.205068 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.17318 (* 1 = 0.17318 loss)
+I1231 14:50:17.205088 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.324233 (* 1 = 0.324233 loss)
+I1231 14:50:17.205096 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.000112906 (* 0.01 = 1.12906e-06 loss)
+I1231 14:50:17.205102 12829 sgd_solver.cpp:106] Iteration 7, lr = 0.001
+I1231 14:50:19.609899 12829 solver.cpp:228] Iteration 8, loss = 0.574881
+I1231 14:50:19.609942 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00648187 (* 1 = 0.00648187 loss)
+I1231 14:50:19.609951 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0745027 (* 2 = 0.149005 loss)
+I1231 14:50:19.609958 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.0819027 (* 1 = 0.0819027 loss)
+I1231 14:50:19.609964 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.326455 (* 1 = 0.326455 loss)
+I1231 14:50:19.609982 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.000228773 (* 0.01 = 2.28773e-06 loss)
+I1231 14:50:19.610002 12829 sgd_solver.cpp:106] Iteration 8, lr = 0.001
+I1231 14:50:22.008478 12829 solver.cpp:228] Iteration 9, loss = 0.517742
+I1231 14:50:22.008523 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00207859 (* 1 = 0.00207859 loss)
+I1231 14:50:22.008548 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0657529 (* 2 = 0.131506 loss)
+I1231 14:50:22.008554 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.100955 (* 1 = 0.100955 loss)
+I1231 14:50:22.008561 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.441351 (* 1 = 0.441351 loss)
+I1231 14:50:22.008581 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.000129033 (* 0.01 = 1.29033e-06 loss)
+I1231 14:50:22.008604 12829 sgd_solver.cpp:106] Iteration 9, lr = 0.001
+I1231 14:50:24.407461 12829 solver.cpp:228] Iteration 10, loss = 0.728951
+I1231 14:50:24.407510 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00332818 (* 1 = 0.00332818 loss)
+I1231 14:50:24.407516 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0649907 (* 2 = 0.129981 loss)
+I1231 14:50:24.407541 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.216216 (* 1 = 0.216216 loss)
+I1231 14:50:24.407558 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.103699 (* 1 = 0.103699 loss)
+I1231 14:50:24.407564 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.000506786 (* 0.01 = 5.06786e-06 loss)
+I1231 14:50:24.407584 12829 sgd_solver.cpp:106] Iteration 10, lr = 0.001
+I1231 14:50:26.791407 12829 solver.cpp:228] Iteration 11, loss = 0.730995
+I1231 14:50:26.791455 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00929125 (* 1 = 0.00929125 loss)
+I1231 14:50:26.791463 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0714438 (* 2 = 0.142888 loss)
+I1231 14:50:26.791488 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.114015 (* 1 = 0.114015 loss)
+I1231 14:50:26.791508 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.254842 (* 1 = 0.254842 loss)
+I1231 14:50:26.791517 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.00319295 (* 0.01 = 3.19295e-05 loss)
+I1231 14:50:26.791524 12829 sgd_solver.cpp:106] Iteration 11, lr = 0.001
+I1231 14:50:29.166910 12829 solver.cpp:228] Iteration 12, loss = 0.802367
+I1231 14:50:29.166945 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.000305337 (* 1 = 0.000305337 loss)
+I1231 14:50:29.166968 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.125776 (* 2 = 0.251552 loss)
+I1231 14:50:29.166975 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.0880606 (* 1 = 0.0880606 loss)
+I1231 14:50:29.166982 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.0880459 (* 1 = 0.0880459 loss)
+I1231 14:50:29.166990 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 2.61394e-05 (* 0.01 = 2.61394e-07 loss)
+I1231 14:50:29.166996 12829 sgd_solver.cpp:106] Iteration 12, lr = 0.001
+I1231 14:50:31.547435 12829 solver.cpp:228] Iteration 13, loss = 0.734399
+I1231 14:50:31.547480 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.000908456 (* 1 = 0.000908456 loss)
+I1231 14:50:31.547503 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.27514 (* 2 = 0.550281 loss)
+I1231 14:50:31.547508 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.287488 (* 1 = 0.287488 loss)
+I1231 14:50:31.547513 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.708645 (* 1 = 0.708645 loss)
+I1231 14:50:31.547530 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.00113906 (* 0.01 = 1.13906e-05 loss)
+I1231 14:50:31.547535 12829 sgd_solver.cpp:106] Iteration 13, lr = 0.001
+I1231 14:50:33.919077 12829 solver.cpp:228] Iteration 14, loss = 0.622293
+I1231 14:50:33.919123 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0432178 (* 1 = 0.0432178 loss)
+I1231 14:50:33.919144 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.407131 (* 2 = 0.814262 loss)
+I1231 14:50:33.919149 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.133647 (* 1 = 0.133647 loss)
+I1231 14:50:33.919154 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.274114 (* 1 = 0.274114 loss)
+I1231 14:50:33.919172 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.00189769 (* 0.01 = 1.89769e-05 loss)
+I1231 14:50:33.919178 12829 sgd_solver.cpp:106] Iteration 14, lr = 0.001
+I1231 14:50:36.275656 12829 solver.cpp:228] Iteration 15, loss = 0.624943
+I1231 14:50:36.275701 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00255623 (* 1 = 0.00255623 loss)
+I1231 14:50:36.275722 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.23403 (* 2 = 0.46806 loss)
+I1231 14:50:36.275728 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.271692 (* 1 = 0.271692 loss)
+I1231 14:50:36.275732 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.770592 (* 1 = 0.770592 loss)
+I1231 14:50:36.275738 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.000129884 (* 0.01 = 1.29884e-06 loss)
+I1231 14:50:36.275744 12829 sgd_solver.cpp:106] Iteration 15, lr = 0.001
+I1231 14:50:38.619777 12829 solver.cpp:228] Iteration 16, loss = 0.813205
+I1231 14:50:38.619822 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0246891 (* 1 = 0.0246891 loss)
+I1231 14:50:38.619843 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.601612 (* 2 = 1.20322 loss)
+I1231 14:50:38.619848 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.0163358 (* 1 = 0.0163358 loss)
+I1231 14:50:38.619853 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.150409 (* 1 = 0.150409 loss)
+I1231 14:50:38.619871 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0064022 (* 0.01 = 6.4022e-05 loss)
+I1231 14:50:38.619876 12829 sgd_solver.cpp:106] Iteration 16, lr = 0.001
+I1231 14:50:40.977982 12829 solver.cpp:228] Iteration 17, loss = 0.596667
+I1231 14:50:40.978026 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00610466 (* 1 = 0.00610466 loss)
+I1231 14:50:40.978034 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.154489 (* 2 = 0.308978 loss)
+I1231 14:50:40.978055 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.386224 (* 1 = 0.386224 loss)
+I1231 14:50:40.978072 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.306098 (* 1 = 0.306098 loss)
+I1231 14:50:40.978077 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0135187 (* 0.01 = 0.000135187 loss)
+I1231 14:50:40.978096 12829 sgd_solver.cpp:106] Iteration 17, lr = 0.001
+I1231 14:50:43.330708 12829 solver.cpp:228] Iteration 18, loss = 0.95522
+I1231 14:50:43.330752 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.000236382 (* 1 = 0.000236382 loss)
+I1231 14:50:43.330775 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.036564 (* 2 = 0.0731279 loss)
+I1231 14:50:43.330780 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.15686 (* 1 = 0.15686 loss)
+I1231 14:50:43.330801 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.945648 (* 1 = 0.945648 loss)
+I1231 14:50:43.330806 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.00209032 (* 0.01 = 2.09032e-05 loss)
+I1231 14:50:43.330811 12829 sgd_solver.cpp:106] Iteration 18, lr = 0.001
+I1231 14:50:45.668932 12829 solver.cpp:228] Iteration 19, loss = 1.41405
+I1231 14:50:45.668977 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0162385 (* 1 = 0.0162385 loss)
+I1231 14:50:45.668987 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.125941 (* 2 = 0.251881 loss)
+I1231 14:50:45.668992 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.218717 (* 1 = 0.218717 loss)
+I1231 14:50:45.668998 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.39559 (* 1 = 1.39559 loss)
+I1231 14:50:45.669016 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.339408 (* 0.01 = 0.00339408 loss)
+I1231 14:50:45.669035 12829 sgd_solver.cpp:106] Iteration 19, lr = 0.001
+I1231 14:50:48.014799 12829 solver.cpp:228] Iteration 20, loss = 1.25133
+I1231 14:50:48.014844 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.010734 (* 1 = 0.010734 loss)
+I1231 14:50:48.014868 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.116927 (* 2 = 0.233853 loss)
+I1231 14:50:48.014875 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.701728 (* 1 = 0.701728 loss)
+I1231 14:50:48.014895 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.343699 (* 1 = 0.343699 loss)
+I1231 14:50:48.014902 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.126975 (* 0.01 = 0.00126975 loss)
+I1231 14:50:48.014920 12829 sgd_solver.cpp:106] Iteration 20, lr = 0.001
+I1231 14:50:50.347550 12829 solver.cpp:228] Iteration 21, loss = 0.984055
+I1231 14:50:50.347596 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.000823797 (* 1 = 0.000823797 loss)
+I1231 14:50:50.347618 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.106701 (* 2 = 0.213403 loss)
+I1231 14:50:50.347623 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.502608 (* 1 = 0.502608 loss)
+I1231 14:50:50.347643 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.561562 (* 1 = 0.561562 loss)
+I1231 14:50:50.347651 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.00589593 (* 0.01 = 5.89593e-05 loss)
+I1231 14:50:50.347656 12829 sgd_solver.cpp:106] Iteration 21, lr = 0.001
+I1231 14:50:52.671020 12829 solver.cpp:228] Iteration 22, loss = 1.17481
+I1231 14:50:52.671066 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00224858 (* 1 = 0.00224858 loss)
+I1231 14:50:52.671088 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.122202 (* 2 = 0.244405 loss)
+I1231 14:50:52.671093 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.317562 (* 1 = 0.317562 loss)
+I1231 14:50:52.671113 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.2782 (* 1 = 1.2782 loss)
+I1231 14:50:52.671118 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0815176 (* 0.01 = 0.000815176 loss)
+I1231 14:50:52.671138 12829 sgd_solver.cpp:106] Iteration 22, lr = 0.001
+I1231 14:50:55.027339 12829 solver.cpp:228] Iteration 23, loss = 1.15743
+I1231 14:50:55.027389 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0178484 (* 1 = 0.0178484 loss)
+I1231 14:50:55.027412 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.10057 (* 2 = 0.201141 loss)
+I1231 14:50:55.027417 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.119228 (* 1 = 0.119228 loss)
+I1231 14:50:55.027434 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.781313 (* 1 = 0.781313 loss)
+I1231 14:50:55.027439 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.153342 (* 0.01 = 0.00153342 loss)
+I1231 14:50:55.027458 12829 sgd_solver.cpp:106] Iteration 23, lr = 0.001
+I1231 14:50:57.378268 12829 solver.cpp:228] Iteration 24, loss = 0.936204
+I1231 14:50:57.378314 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.001709 (* 1 = 0.001709 loss)
+I1231 14:50:57.378336 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.243594 (* 2 = 0.487188 loss)
+I1231 14:50:57.378345 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.162239 (* 1 = 0.162239 loss)
+I1231 14:50:57.378350 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.04387 (* 1 = 1.04387 loss)
+I1231 14:50:57.378370 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.024152 (* 0.01 = 0.00024152 loss)
+I1231 14:50:57.378388 12829 sgd_solver.cpp:106] Iteration 24, lr = 0.001
+I1231 14:50:59.734552 12829 solver.cpp:228] Iteration 25, loss = 1.34207
+I1231 14:50:59.734598 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00215543 (* 1 = 0.00215543 loss)
+I1231 14:50:59.734622 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0671487 (* 2 = 0.134297 loss)
+I1231 14:50:59.734627 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.433165 (* 1 = 0.433165 loss)
+I1231 14:50:59.734645 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.626575 (* 1 = 0.626575 loss)
+I1231 14:50:59.734650 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0149206 (* 0.01 = 0.000149206 loss)
+I1231 14:50:59.734669 12829 sgd_solver.cpp:106] Iteration 25, lr = 0.001
+I1231 14:51:02.100373 12829 solver.cpp:228] Iteration 26, loss = 0.718898
+I1231 14:51:02.100419 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00153342 (* 1 = 0.00153342 loss)
+I1231 14:51:02.100426 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0445776 (* 2 = 0.0891553 loss)
+I1231 14:51:02.100432 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.135072 (* 1 = 0.135072 loss)
+I1231 14:51:02.100452 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.961795 (* 1 = 0.961795 loss)
+I1231 14:51:02.100457 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0118671 (* 0.01 = 0.000118671 loss)
+I1231 14:51:02.100463 12829 sgd_solver.cpp:106] Iteration 26, lr = 0.001
+I1231 14:51:04.458811 12829 solver.cpp:228] Iteration 27, loss = 0.881647
+I1231 14:51:04.458842 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0253987 (* 1 = 0.0253987 loss)
+I1231 14:51:04.458863 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.152258 (* 2 = 0.304516 loss)
+I1231 14:51:04.458868 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.162164 (* 1 = 0.162164 loss)
+I1231 14:51:04.458889 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.37289 (* 1 = 1.37289 loss)
+I1231 14:51:04.458895 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0450832 (* 0.01 = 0.000450832 loss)
+I1231 14:51:04.458901 12829 sgd_solver.cpp:106] Iteration 27, lr = 0.001
+I1231 14:51:06.806685 12829 solver.cpp:228] Iteration 28, loss = 0.99359
+I1231 14:51:06.806730 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0262919 (* 1 = 0.0262919 loss)
+I1231 14:51:06.806737 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.218129 (* 2 = 0.436258 loss)
+I1231 14:51:06.806757 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.497356 (* 1 = 0.497356 loss)
+I1231 14:51:06.806777 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.766771 (* 1 = 0.766771 loss)
+I1231 14:51:06.806782 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0683651 (* 0.01 = 0.000683651 loss)
+I1231 14:51:06.806788 12829 sgd_solver.cpp:106] Iteration 28, lr = 0.001
+I1231 14:51:09.127905 12829 solver.cpp:228] Iteration 29, loss = 0.954755
+I1231 14:51:09.127952 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00395487 (* 1 = 0.00395487 loss)
+I1231 14:51:09.127974 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0504245 (* 2 = 0.100849 loss)
+I1231 14:51:09.127979 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.0902371 (* 1 = 0.0902371 loss)
+I1231 14:51:09.127985 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.408676 (* 1 = 0.408676 loss)
+I1231 14:51:09.127990 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0151133 (* 0.01 = 0.000151133 loss)
+I1231 14:51:09.127995 12829 sgd_solver.cpp:106] Iteration 29, lr = 0.001
+I1231 14:51:11.461877 12829 solver.cpp:228] Iteration 30, loss = 1.92588
+I1231 14:51:11.461925 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00203113 (* 1 = 0.00203113 loss)
+I1231 14:51:11.461946 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0886085 (* 2 = 0.177217 loss)
+I1231 14:51:11.461951 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.03055 (* 1 = 1.03055 loss)
+I1231 14:51:11.461956 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.922631 (* 1 = 0.922631 loss)
+I1231 14:51:11.461972 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0111014 (* 0.01 = 0.000111014 loss)
+I1231 14:51:11.461978 12829 sgd_solver.cpp:106] Iteration 30, lr = 0.001
+I1231 14:51:13.783866 12829 solver.cpp:228] Iteration 31, loss = 1.3687
+I1231 14:51:13.783912 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00190341 (* 1 = 0.00190341 loss)
+I1231 14:51:13.783918 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.10459 (* 2 = 0.209181 loss)
+I1231 14:51:13.783941 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.319169 (* 1 = 0.319169 loss)
+I1231 14:51:13.783946 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.848853 (* 1 = 0.848853 loss)
+I1231 14:51:13.783962 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.00982968 (* 0.01 = 9.82968e-05 loss)
+I1231 14:51:13.783982 12829 sgd_solver.cpp:106] Iteration 31, lr = 0.001
+I1231 14:51:16.067703 12829 solver.cpp:228] Iteration 32, loss = 2.9328
+I1231 14:51:16.067752 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.078634 (* 1 = 0.078634 loss)
+I1231 14:51:16.067775 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.400185 (* 2 = 0.800371 loss)
+I1231 14:51:16.067780 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.40714 (* 1 = 0.40714 loss)
+I1231 14:51:16.067785 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.865856 (* 1 = 0.865856 loss)
+I1231 14:51:16.067801 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.34875 (* 0.01 = 0.0034875 loss)
+I1231 14:51:16.067806 12829 sgd_solver.cpp:106] Iteration 32, lr = 0.001
+I1231 14:51:18.393571 12829 solver.cpp:228] Iteration 33, loss = 1.80876
+I1231 14:51:18.393615 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00966172 (* 1 = 0.00966172 loss)
+I1231 14:51:18.393636 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.181705 (* 2 = 0.363409 loss)
+I1231 14:51:18.393642 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.277418 (* 1 = 0.277418 loss)
+I1231 14:51:18.393664 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.945388 (* 1 = 0.945388 loss)
+I1231 14:51:18.393671 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.119538 (* 0.01 = 0.00119538 loss)
+I1231 14:51:18.393688 12829 sgd_solver.cpp:106] Iteration 33, lr = 0.001
+I1231 14:51:20.709935 12829 solver.cpp:228] Iteration 34, loss = 2.17337
+I1231 14:51:20.709980 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.000136702 (* 1 = 0.000136702 loss)
+I1231 14:51:20.709986 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.037337 (* 2 = 0.0746739 loss)
+I1231 14:51:20.710006 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.42973 (* 1 = 1.42973 loss)
+I1231 14:51:20.710026 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.34946 (* 1 = 0.34946 loss)
+I1231 14:51:20.710031 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0167625 (* 0.01 = 0.000167625 loss)
+I1231 14:51:20.710037 12829 sgd_solver.cpp:106] Iteration 34, lr = 0.001
+I1231 14:51:23.034798 12829 solver.cpp:228] Iteration 35, loss = 2.53716
+I1231 14:51:23.034848 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00932474 (* 1 = 0.00932474 loss)
+I1231 14:51:23.034857 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0577295 (* 2 = 0.115459 loss)
+I1231 14:51:23.034864 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.221496 (* 1 = 0.221496 loss)
+I1231 14:51:23.034870 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.803013 (* 1 = 0.803013 loss)
+I1231 14:51:23.034876 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0728472 (* 0.01 = 0.000728472 loss)
+I1231 14:51:23.034881 12829 sgd_solver.cpp:106] Iteration 35, lr = 0.001
+I1231 14:51:25.356678 12829 solver.cpp:228] Iteration 36, loss = 2.2289
+I1231 14:51:25.356726 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0023689 (* 1 = 0.0023689 loss)
+I1231 14:51:25.356735 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0951271 (* 2 = 0.190254 loss)
+I1231 14:51:25.356741 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.903348 (* 1 = 0.903348 loss)
+I1231 14:51:25.356760 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.656906 (* 1 = 0.656906 loss)
+I1231 14:51:25.356766 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0185946 (* 0.01 = 0.000185946 loss)
+I1231 14:51:25.356786 12829 sgd_solver.cpp:106] Iteration 36, lr = 0.001
+I1231 14:51:27.696820 12829 solver.cpp:228] Iteration 37, loss = 1.62343
+I1231 14:51:27.696868 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00520451 (* 1 = 0.00520451 loss)
+I1231 14:51:27.696892 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0390306 (* 2 = 0.0780611 loss)
+I1231 14:51:27.696900 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.842472 (* 1 = 0.842472 loss)
+I1231 14:51:27.696919 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.963648 (* 1 = 0.963648 loss)
+I1231 14:51:27.696925 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0698772 (* 0.01 = 0.000698772 loss)
+I1231 14:51:27.696944 12829 sgd_solver.cpp:106] Iteration 37, lr = 0.001
+I1231 14:51:30.025686 12829 solver.cpp:228] Iteration 38, loss = 1.82797
+I1231 14:51:30.025732 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.000111175 (* 1 = 0.000111175 loss)
+I1231 14:51:30.025755 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.146203 (* 2 = 0.292406 loss)
+I1231 14:51:30.025763 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.085841 (* 1 = 0.085841 loss)
+I1231 14:51:30.025782 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.50891 (* 1 = 1.50891 loss)
+I1231 14:51:30.025789 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.512793 (* 0.01 = 0.00512793 loss)
+I1231 14:51:30.025807 12829 sgd_solver.cpp:106] Iteration 38, lr = 0.001
+I1231 14:51:32.366653 12829 solver.cpp:228] Iteration 39, loss = 0.995652
+I1231 14:51:32.366699 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.154685 (* 1 = 0.154685 loss)
+I1231 14:51:32.366708 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.246415 (* 2 = 0.49283 loss)
+I1231 14:51:32.366714 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.707066 (* 1 = 0.707066 loss)
+I1231 14:51:32.366734 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.37963 (* 1 = 1.37963 loss)
+I1231 14:51:32.366739 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 4.24639 (* 0.01 = 0.0424639 loss)
+I1231 14:51:32.366760 12829 sgd_solver.cpp:106] Iteration 39, lr = 0.001
+I1231 14:51:34.683352 12829 solver.cpp:228] Iteration 40, loss = 1.29931
+I1231 14:51:34.683403 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00313298 (* 1 = 0.00313298 loss)
+I1231 14:51:34.683426 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0549355 (* 2 = 0.109871 loss)
+I1231 14:51:34.683434 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.584687 (* 1 = 0.584687 loss)
+I1231 14:51:34.683454 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.18273 (* 1 = 1.18273 loss)
+I1231 14:51:34.683459 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.370466 (* 0.01 = 0.00370466 loss)
+I1231 14:51:34.683477 12829 sgd_solver.cpp:106] Iteration 40, lr = 0.001
+I1231 14:51:37.001881 12829 solver.cpp:228] Iteration 41, loss = 1.31725
+I1231 14:51:37.001930 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00365525 (* 1 = 0.00365525 loss)
+I1231 14:51:37.001940 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.104821 (* 2 = 0.209643 loss)
+I1231 14:51:37.001946 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.177411 (* 1 = 0.177411 loss)
+I1231 14:51:37.001952 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.242219 (* 1 = 0.242219 loss)
+I1231 14:51:37.001958 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0566576 (* 0.01 = 0.000566576 loss)
+I1231 14:51:37.001965 12829 sgd_solver.cpp:106] Iteration 41, lr = 0.001
+I1231 14:51:39.317880 12829 solver.cpp:228] Iteration 42, loss = 1.69017
+I1231 14:51:39.317927 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0454572 (* 1 = 0.0454572 loss)
+I1231 14:51:39.317950 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.223669 (* 2 = 0.447337 loss)
+I1231 14:51:39.317955 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.746194 (* 1 = 0.746194 loss)
+I1231 14:51:39.317976 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.78807 (* 1 = 1.78807 loss)
+I1231 14:51:39.317981 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.650311 (* 0.01 = 0.00650311 loss)
+I1231 14:51:39.317987 12829 sgd_solver.cpp:106] Iteration 42, lr = 0.001
+I1231 14:51:41.629108 12829 solver.cpp:228] Iteration 43, loss = 1.25367
+I1231 14:51:41.629143 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0210841 (* 1 = 0.0210841 loss)
+I1231 14:51:41.629166 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0882032 (* 2 = 0.176406 loss)
+I1231 14:51:41.629173 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.561448 (* 1 = 0.561448 loss)
+I1231 14:51:41.629179 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.443196 (* 1 = 0.443196 loss)
+I1231 14:51:41.629187 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.222735 (* 0.01 = 0.00222735 loss)
+I1231 14:51:41.629194 12829 sgd_solver.cpp:106] Iteration 43, lr = 0.001
+I1231 14:51:43.961657 12829 solver.cpp:228] Iteration 44, loss = 0.9625
+I1231 14:51:43.961702 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0159094 (* 1 = 0.0159094 loss)
+I1231 14:51:43.961724 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0735797 (* 2 = 0.147159 loss)
+I1231 14:51:43.961729 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.138393 (* 1 = 0.138393 loss)
+I1231 14:51:43.961733 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.561677 (* 1 = 0.561677 loss)
+I1231 14:51:43.961737 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.17021 (* 0.01 = 0.0017021 loss)
+I1231 14:51:43.961755 12829 sgd_solver.cpp:106] Iteration 44, lr = 0.001
+I1231 14:51:46.291218 12829 solver.cpp:228] Iteration 45, loss = 1.13229
+I1231 14:51:46.291265 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00228099 (* 1 = 0.00228099 loss)
+I1231 14:51:46.291286 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0819311 (* 2 = 0.163862 loss)
+I1231 14:51:46.291292 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.0833116 (* 1 = 0.0833116 loss)
+I1231 14:51:46.291296 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.823626 (* 1 = 0.823626 loss)
+I1231 14:51:46.291314 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.237478 (* 0.01 = 0.00237478 loss)
+I1231 14:51:46.291319 12829 sgd_solver.cpp:106] Iteration 45, lr = 0.001
+I1231 14:51:48.654894 12829 solver.cpp:228] Iteration 46, loss = 2.59326
+I1231 14:51:48.654939 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0699584 (* 1 = 0.0699584 loss)
+I1231 14:51:48.654960 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.157323 (* 2 = 0.314647 loss)
+I1231 14:51:48.654966 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.50739 (* 1 = 0.50739 loss)
+I1231 14:51:48.654986 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 3.09917 (* 1 = 3.09917 loss)
+I1231 14:51:48.654991 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.690909 (* 0.01 = 0.00690909 loss)
+I1231 14:51:48.654997 12829 sgd_solver.cpp:106] Iteration 46, lr = 0.001
+I1231 14:51:51.021852 12829 solver.cpp:228] Iteration 47, loss = 2.53278
+I1231 14:51:51.021898 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0101686 (* 1 = 0.0101686 loss)
+I1231 14:51:51.021919 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0364286 (* 2 = 0.0728571 loss)
+I1231 14:51:51.021924 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.304161 (* 1 = 0.304161 loss)
+I1231 14:51:51.021929 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.56667 (* 1 = 2.56667 loss)
+I1231 14:51:51.021946 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.021717 (* 0.01 = 0.00021717 loss)
+I1231 14:51:51.021951 12829 sgd_solver.cpp:106] Iteration 47, lr = 0.001
+I1231 14:51:53.372361 12829 solver.cpp:228] Iteration 48, loss = 1.60456
+I1231 14:51:53.372408 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00570671 (* 1 = 0.00570671 loss)
+I1231 14:51:53.372416 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0840095 (* 2 = 0.168019 loss)
+I1231 14:51:53.372438 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.06353 (* 1 = 1.06353 loss)
+I1231 14:51:53.372445 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.853875 (* 1 = 0.853875 loss)
+I1231 14:51:53.372449 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.616479 (* 0.01 = 0.00616479 loss)
+I1231 14:51:53.372455 12829 sgd_solver.cpp:106] Iteration 48, lr = 0.001
+I1231 14:51:55.744364 12829 solver.cpp:228] Iteration 49, loss = 3.62977
+I1231 14:51:55.744413 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0138023 (* 1 = 0.0138023 loss)
+I1231 14:51:55.744437 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.187893 (* 2 = 0.375787 loss)
+I1231 14:51:55.744443 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.629883 (* 1 = 0.629883 loss)
+I1231 14:51:55.744463 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 3.33697 (* 1 = 3.33697 loss)
+I1231 14:51:55.744482 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.136121 (* 0.01 = 0.00136121 loss)
+I1231 14:51:55.744490 12829 sgd_solver.cpp:106] Iteration 49, lr = 0.001
+I1231 14:51:58.113945 12829 solver.cpp:228] Iteration 50, loss = 3.51778
+I1231 14:51:58.113972 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0224886 (* 1 = 0.0224886 loss)
+I1231 14:51:58.113993 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0901862 (* 2 = 0.180372 loss)
+I1231 14:51:58.114013 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.39487 (* 1 = 1.39487 loss)
+I1231 14:51:58.114018 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.60826 (* 1 = 1.60826 loss)
+I1231 14:51:58.114023 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.593808 (* 0.01 = 0.00593808 loss)
+I1231 14:51:58.114028 12829 sgd_solver.cpp:106] Iteration 50, lr = 0.001
+I1231 14:52:00.469522 12829 solver.cpp:228] Iteration 51, loss = 3.19639
+I1231 14:52:00.469566 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0359196 (* 1 = 0.0359196 loss)
+I1231 14:52:00.469589 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.135149 (* 2 = 0.270298 loss)
+I1231 14:52:00.469594 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.72704 (* 1 = 1.72704 loss)
+I1231 14:52:00.469614 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.55853 (* 1 = 2.55853 loss)
+I1231 14:52:00.469619 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.718922 (* 0.01 = 0.00718922 loss)
+I1231 14:52:00.469626 12829 sgd_solver.cpp:106] Iteration 51, lr = 0.001
+I1231 14:52:02.858796 12829 solver.cpp:228] Iteration 52, loss = 4.55019
+I1231 14:52:02.858844 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0329546 (* 1 = 0.0329546 loss)
+I1231 14:52:02.858868 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.0988602 (* 2 = 0.19772 loss)
+I1231 14:52:02.858886 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.7497 (* 1 = 1.7497 loss)
+I1231 14:52:02.858892 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.74336 (* 1 = 1.74336 loss)
+I1231 14:52:02.858912 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 1.15147 (* 0.01 = 0.0115147 loss)
+I1231 14:52:02.858919 12829 sgd_solver.cpp:106] Iteration 52, lr = 0.001
+I1231 14:52:05.220631 12829 solver.cpp:228] Iteration 53, loss = 3.14265
+I1231 14:52:05.220690 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0238694 (* 1 = 0.0238694 loss)
+I1231 14:52:05.220713 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.117771 (* 2 = 0.235542 loss)
+I1231 14:52:05.220718 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.155114 (* 1 = 0.155114 loss)
+I1231 14:52:05.220724 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.58309 (* 1 = 1.58309 loss)
+I1231 14:52:05.220729 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 1.47446 (* 0.01 = 0.0147446 loss)
+I1231 14:52:05.220736 12829 sgd_solver.cpp:106] Iteration 53, lr = 0.001
+I1231 14:52:07.566212 12829 solver.cpp:228] Iteration 54, loss = 2.68264
+I1231 14:52:07.566258 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0684236 (* 1 = 0.0684236 loss)
+I1231 14:52:07.566280 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.138933 (* 2 = 0.277866 loss)
+I1231 14:52:07.566285 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.79938 (* 1 = 1.79938 loss)
+I1231 14:52:07.566305 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.594615 (* 1 = 0.594615 loss)
+I1231 14:52:07.566311 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 3.5213 (* 0.01 = 0.035213 loss)
+I1231 14:52:07.566318 12829 sgd_solver.cpp:106] Iteration 54, lr = 0.001
+I1231 14:52:09.851915 12829 solver.cpp:228] Iteration 55, loss = 6.55775
+I1231 14:52:09.851966 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0560779 (* 1 = 0.0560779 loss)
+I1231 14:52:09.851989 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.173372 (* 2 = 0.346743 loss)
+I1231 14:52:09.851996 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.37028 (* 1 = 0.37028 loss)
+I1231 14:52:09.852004 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.60266 (* 1 = 1.60266 loss)
+I1231 14:52:09.852010 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 1.19458 (* 0.01 = 0.0119458 loss)
+I1231 14:52:09.852017 12829 sgd_solver.cpp:106] Iteration 55, lr = 0.001
+I1231 14:52:12.217268 12829 solver.cpp:228] Iteration 56, loss = 6.6236
+I1231 14:52:12.217315 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.113671 (* 1 = 0.113671 loss)
+I1231 14:52:12.217339 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.23839 (* 2 = 0.47678 loss)
+I1231 14:52:12.217345 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 5.15317 (* 1 = 5.15317 loss)
+I1231 14:52:12.217351 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.543081 (* 1 = 0.543081 loss)
+I1231 14:52:12.217370 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 9.6826 (* 0.01 = 0.096826 loss)
+I1231 14:52:12.217391 12829 sgd_solver.cpp:106] Iteration 56, lr = 0.001
+I1231 14:52:14.455895 12829 solver.cpp:228] Iteration 57, loss = 4.43225
+I1231 14:52:14.455943 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0500432 (* 1 = 0.0500432 loss)
+I1231 14:52:14.455965 12829 solver.cpp:244]     Train net output #1: loss_cls = 0.074761 (* 2 = 0.149522 loss)
+I1231 14:52:14.455970 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 2.70875 (* 1 = 2.70875 loss)
+I1231 14:52:14.455974 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.29098 (* 1 = 2.29098 loss)
+I1231 14:52:14.455979 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.961701 (* 0.01 = 0.00961701 loss)
+I1231 14:52:14.455984 12829 sgd_solver.cpp:106] Iteration 57, lr = 0.001
+I1231 14:52:16.574051 12829 solver.cpp:228] Iteration 58, loss = -12.6434
+I1231 14:52:16.574100 12829 solver.cpp:244]     Train net output #0: loss_bbox = 8.54902 (* 1 = 8.54902 loss)
+I1231 14:52:16.574121 12829 solver.cpp:244]     Train net output #1: loss_cls = 11.9067 (* 2 = 23.8134 loss)
+I1231 14:52:16.574127 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.646768 (* 1 = 0.646768 loss)
+I1231 14:52:16.574131 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.867219 (* 1 = 0.867219 loss)
+I1231 14:52:16.574148 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 9.17978 (* 0.01 = 0.0917978 loss)
+I1231 14:52:16.574153 12829 sgd_solver.cpp:106] Iteration 58, lr = 0.001
+I1231 14:52:18.693385 12829 solver.cpp:228] Iteration 59, loss = -11.0989
+I1231 14:52:18.693434 12829 solver.cpp:244]     Train net output #0: loss_bbox = 2.16621 (* 1 = 2.16621 loss)
+I1231 14:52:18.693457 12829 solver.cpp:244]     Train net output #1: loss_cls = 6.50645 (* 2 = 13.0129 loss)
+I1231 14:52:18.693462 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.760634 (* 1 = 0.760634 loss)
+I1231 14:52:18.693482 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.449961 (* 1 = 0.449961 loss)
+I1231 14:52:18.693487 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 6.77919 (* 0.01 = 0.0677919 loss)
+I1231 14:52:18.693493 12829 sgd_solver.cpp:106] Iteration 59, lr = 0.001
+I1231 14:52:20.799870 12829 solver.cpp:228] Iteration 60, loss = -13.2107
+I1231 14:52:20.799918 12829 solver.cpp:244]     Train net output #0: loss_bbox = 7.73013 (* 1 = 7.73013 loss)
+I1231 14:52:20.799942 12829 solver.cpp:244]     Train net output #1: loss_cls = 6.67807 (* 2 = 13.3561 loss)
+I1231 14:52:20.799949 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.39774 (* 1 = 1.39774 loss)
+I1231 14:52:20.799957 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.34512 (* 1 = 1.34512 loss)
+I1231 14:52:20.799978 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 5.73403 (* 0.01 = 0.0573402 loss)
+I1231 14:52:20.799983 12829 sgd_solver.cpp:106] Iteration 60, lr = 0.001
+I1231 14:52:22.898071 12829 solver.cpp:228] Iteration 61, loss = -23.9832
+I1231 14:52:22.898121 12829 solver.cpp:244]     Train net output #0: loss_bbox = 10.7961 (* 1 = 10.7961 loss)
+I1231 14:52:22.898130 12829 solver.cpp:244]     Train net output #1: loss_cls = 6.29148 (* 2 = 12.583 loss)
+I1231 14:52:22.898138 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.890828 (* 1 = 0.890828 loss)
+I1231 14:52:22.898144 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.79997 (* 1 = 1.79997 loss)
+I1231 14:52:22.898152 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 7.95819 (* 0.01 = 0.0795819 loss)
+I1231 14:52:22.898159 12829 sgd_solver.cpp:106] Iteration 61, lr = 0.001
+I1231 14:52:25.037722 12829 solver.cpp:228] Iteration 62, loss = -3.25181
+I1231 14:52:25.037757 12829 solver.cpp:244]     Train net output #0: loss_bbox = 2.31258 (* 1 = 2.31258 loss)
+I1231 14:52:25.037781 12829 solver.cpp:244]     Train net output #1: loss_cls = 1.27214 (* 2 = 2.54428 loss)
+I1231 14:52:25.037788 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.715398 (* 1 = 0.715398 loss)
+I1231 14:52:25.037796 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.29982 (* 1 = 2.29982 loss)
+I1231 14:52:25.037802 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 11.3963 (* 0.01 = 0.113963 loss)
+I1231 14:52:25.037811 12829 sgd_solver.cpp:106] Iteration 62, lr = 0.001
+I1231 14:52:27.107058 12829 solver.cpp:228] Iteration 63, loss = -48.8323
+I1231 14:52:27.107095 12829 solver.cpp:244]     Train net output #0: loss_bbox = 23.4146 (* 1 = 23.4146 loss)
+I1231 14:52:27.107117 12829 solver.cpp:244]     Train net output #1: loss_cls = 22.2824 (* 2 = 44.5648 loss)
+I1231 14:52:27.107125 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.71776 (* 1 = 1.71776 loss)
+I1231 14:52:27.107131 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.93457 (* 1 = 1.93457 loss)
+I1231 14:52:27.107138 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 11.1923 (* 0.01 = 0.111923 loss)
+I1231 14:52:27.107144 12829 sgd_solver.cpp:106] Iteration 63, lr = 0.001
+I1231 14:52:29.183126 12829 solver.cpp:228] Iteration 64, loss = -45.6489
+I1231 14:52:29.183177 12829 solver.cpp:244]     Train net output #0: loss_bbox = 29.2989 (* 1 = 29.2989 loss)
+I1231 14:52:29.183187 12829 solver.cpp:244]     Train net output #1: loss_cls = 21.3893 (* 2 = 42.7786 loss)
+I1231 14:52:29.183194 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.99461 (* 1 = 1.99461 loss)
+I1231 14:52:29.183202 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 5.511 (* 1 = 5.511 loss)
+I1231 14:52:29.183208 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 11.1687 (* 0.01 = 0.111687 loss)
+I1231 14:52:29.183215 12829 sgd_solver.cpp:106] Iteration 64, lr = 0.001
+I1231 14:52:31.253984 12829 solver.cpp:228] Iteration 65, loss = -51.2868
+I1231 14:52:31.254019 12829 solver.cpp:244]     Train net output #0: loss_bbox = 33.272 (* 1 = 33.272 loss)
+I1231 14:52:31.254045 12829 solver.cpp:244]     Train net output #1: loss_cls = 5.30775 (* 2 = 10.6155 loss)
+I1231 14:52:31.254051 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.549452 (* 1 = 0.549452 loss)
+I1231 14:52:31.254058 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.2028 (* 1 = 2.2028 loss)
+I1231 14:52:31.254065 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 17.3821 (* 0.01 = 0.173821 loss)
+I1231 14:52:31.254072 12829 sgd_solver.cpp:106] Iteration 65, lr = 0.001
+I1231 14:52:33.326091 12829 solver.cpp:228] Iteration 66, loss = -57.7178
+I1231 14:52:33.326140 12829 solver.cpp:244]     Train net output #0: loss_bbox = 33.8983 (* 1 = 33.8983 loss)
+I1231 14:52:33.326149 12829 solver.cpp:244]     Train net output #1: loss_cls = 21.3624 (* 2 = 42.7249 loss)
+I1231 14:52:33.326158 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.5123 (* 1 = 0.5123 loss)
+I1231 14:52:33.326164 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.4034 (* 1 = 2.4034 loss)
+I1231 14:52:33.326171 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 19.3057 (* 0.01 = 0.193057 loss)
+I1231 14:52:33.326179 12829 sgd_solver.cpp:106] Iteration 66, lr = 0.001
+I1231 14:52:35.399691 12829 solver.cpp:228] Iteration 67, loss = -70.0759
+I1231 14:52:35.399726 12829 solver.cpp:244]     Train net output #0: loss_bbox = 36.2981 (* 1 = 36.2981 loss)
+I1231 14:52:35.399750 12829 solver.cpp:244]     Train net output #1: loss_cls = 11.4874 (* 2 = 22.9749 loss)
+I1231 14:52:35.399757 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 3.06722 (* 1 = 3.06722 loss)
+I1231 14:52:35.399763 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 3.68103 (* 1 = 3.68103 loss)
+I1231 14:52:35.399771 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 26.3276 (* 0.01 = 0.263276 loss)
+I1231 14:52:35.399778 12829 sgd_solver.cpp:106] Iteration 67, lr = 0.001
+I1231 14:52:37.473644 12829 solver.cpp:228] Iteration 68, loss = -61.7821
+I1231 14:52:37.473680 12829 solver.cpp:244]     Train net output #0: loss_bbox = 38.987 (* 1 = 38.987 loss)
+I1231 14:52:37.473702 12829 solver.cpp:244]     Train net output #1: loss_cls = 3.34937 (* 2 = 6.69875 loss)
+I1231 14:52:37.473709 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.18564 (* 1 = 1.18564 loss)
+I1231 14:52:37.473716 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.27132 (* 1 = 1.27132 loss)
+I1231 14:52:37.473724 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 23.8004 (* 0.01 = 0.238004 loss)
+I1231 14:52:37.473731 12829 sgd_solver.cpp:106] Iteration 68, lr = 0.001
+I1231 14:52:39.543619 12829 solver.cpp:228] Iteration 69, loss = -73.7405
+I1231 14:52:39.543655 12829 solver.cpp:244]     Train net output #0: loss_bbox = 42.9562 (* 1 = 42.9562 loss)
+I1231 14:52:39.543679 12829 solver.cpp:244]     Train net output #1: loss_cls = 22.9824 (* 2 = 45.9649 loss)
+I1231 14:52:39.543686 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.313717 (* 1 = 0.313717 loss)
+I1231 14:52:39.543694 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.54826 (* 1 = 2.54826 loss)
+I1231 14:52:39.543700 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 29.4711 (* 0.01 = 0.294711 loss)
+I1231 14:52:39.543707 12829 sgd_solver.cpp:106] Iteration 69, lr = 0.001
+I1231 14:52:41.614151 12829 solver.cpp:228] Iteration 70, loss = -67.9824
+I1231 14:52:41.614187 12829 solver.cpp:244]     Train net output #0: loss_bbox = 46.1663 (* 1 = 46.1663 loss)
+I1231 14:52:41.614209 12829 solver.cpp:244]     Train net output #1: loss_cls = 3.15118 (* 2 = 6.30236 loss)
+I1231 14:52:41.614215 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.45057 (* 1 = 1.45057 loss)
+I1231 14:52:41.614223 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.959777 (* 1 = 0.959777 loss)
+I1231 14:52:41.614229 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 30.4284 (* 0.01 = 0.304284 loss)
+I1231 14:52:41.614235 12829 sgd_solver.cpp:106] Iteration 70, lr = 0.001
+I1231 14:52:43.868206 12829 solver.cpp:228] Iteration 71, loss = 63.9127
+I1231 14:52:43.868257 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.333203 (* 1 = 0.333203 loss)
+I1231 14:52:43.868266 12829 solver.cpp:244]     Train net output #1: loss_cls = 13.0922 (* 2 = 26.1845 loss)
+I1231 14:52:43.868273 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 0.690577 (* 1 = 0.690577 loss)
+I1231 14:52:43.868280 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 1.41931 (* 1 = 1.41931 loss)
+I1231 14:52:43.868286 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 32.3326 (* 0.01 = 0.323326 loss)
+I1231 14:52:43.868294 12829 sgd_solver.cpp:106] Iteration 71, lr = 0.001
+I1231 14:52:46.055981 12829 solver.cpp:228] Iteration 72, loss = 8.46445
+I1231 14:52:46.056017 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.00727098 (* 1 = 0.00727098 loss)
+I1231 14:52:46.056058 12829 solver.cpp:244]     Train net output #1: loss_cls = 1.48321 (* 2 = 2.96641 loss)
+I1231 14:52:46.056066 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 1.11867 (* 1 = 1.11867 loss)
+I1231 14:52:46.056073 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 0.995075 (* 1 = 0.995075 loss)
+I1231 14:52:46.056080 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.0423124 (* 0.01 = 0.000423124 loss)
+I1231 14:52:46.056099 12829 sgd_solver.cpp:106] Iteration 72, lr = 0.001
+I1231 14:52:48.424295 12829 solver.cpp:228] Iteration 73, loss = 0.526749
+I1231 14:52:48.424345 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.0584895 (* 1 = 0.0584895 loss)
+I1231 14:52:48.424355 12829 solver.cpp:244]     Train net output #1: loss_cls = 7.35935 (* 2 = 14.7187 loss)
+I1231 14:52:48.424360 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 2.65307 (* 1 = 2.65307 loss)
+I1231 14:52:48.424367 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 4.90862 (* 1 = 4.90862 loss)
+I1231 14:52:48.424374 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.142728 (* 0.01 = 0.00142728 loss)
+I1231 14:52:48.424382 12829 sgd_solver.cpp:106] Iteration 73, lr = 0.001
+I1231 14:52:50.518465 12829 solver.cpp:228] Iteration 74, loss = 4.39088
+I1231 14:52:50.518499 12829 solver.cpp:244]     Train net output #0: loss_bbox = 2.53453 (* 1 = 2.53453 loss)
+I1231 14:52:50.518523 12829 solver.cpp:244]     Train net output #1: loss_cls = 11.4329 (* 2 = 22.8659 loss)
+I1231 14:52:50.518529 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 12.1129 (* 1 = 12.1129 loss)
+I1231 14:52:50.518537 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 3.78374 (* 1 = 3.78374 loss)
+I1231 14:52:50.518543 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0.9649 (* 0.01 = 0.009649 loss)
+I1231 14:52:50.518550 12829 sgd_solver.cpp:106] Iteration 74, lr = 0.001
+I1231 14:52:52.610440 12829 solver.cpp:228] Iteration 75, loss = 4.41371
+I1231 14:52:52.610486 12829 solver.cpp:244]     Train net output #0: loss_bbox = 1.15613 (* 1 = 1.15613 loss)
+I1231 14:52:52.610496 12829 solver.cpp:244]     Train net output #1: loss_cls = 9.32519 (* 2 = 18.6504 loss)
+I1231 14:52:52.610502 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 11.4013 (* 1 = 11.4013 loss)
+I1231 14:52:52.610509 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.40355 (* 1 = 2.40355 loss)
+I1231 14:52:52.610515 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 2.42264 (* 0.01 = 0.0242264 loss)
+I1231 14:52:52.610522 12829 sgd_solver.cpp:106] Iteration 75, lr = 0.001
+I1231 14:52:54.705485 12829 solver.cpp:228] Iteration 76, loss = 5.50976
+I1231 14:52:54.705535 12829 solver.cpp:244]     Train net output #0: loss_bbox = 0.753851 (* 1 = 0.753851 loss)
+I1231 14:52:54.705544 12829 solver.cpp:244]     Train net output #1: loss_cls = 9.45211 (* 2 = 18.9042 loss)
+I1231 14:52:54.705551 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 11.9314 (* 1 = 11.9314 loss)
+I1231 14:52:54.705559 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 3.71763 (* 1 = 3.71763 loss)
+I1231 14:52:54.705566 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 4.22364 (* 0.01 = 0.0422364 loss)
+I1231 14:52:54.705572 12829 sgd_solver.cpp:106] Iteration 76, lr = 0.001
+I1231 14:52:56.863175 12829 solver.cpp:228] Iteration 77, loss = 41.0779
+I1231 14:52:56.863224 12829 solver.cpp:244]     Train net output #0: loss_bbox = 14.8515 (* 1 = 14.8515 loss)
+I1231 14:52:56.863234 12829 solver.cpp:244]     Train net output #1: loss_cls = 10.6949 (* 2 = 21.3897 loss)
+I1231 14:52:56.863241 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 8.9451 (* 1 = 8.9451 loss)
+I1231 14:52:56.863247 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 2.50376 (* 1 = 2.50376 loss)
+I1231 14:52:56.863255 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 20.9136 (* 0.01 = 0.209136 loss)
+I1231 14:52:56.863261 12829 sgd_solver.cpp:106] Iteration 77, lr = 0.001
+/home/ce/Documents/py-faster-rcnn/tools/../lib/fast_rcnn/bbox_transform.py:48: RuntimeWarning: overflow encountered in exp
+  pred_w = np.exp(dw) * widths[:, np.newaxis]
+/home/ce/Documents/py-faster-rcnn/tools/../lib/fast_rcnn/bbox_transform.py:48: RuntimeWarning: overflow encountered in multiply
+  pred_w = np.exp(dw) * widths[:, np.newaxis]
+/home/ce/Documents/py-faster-rcnn/tools/../lib/fast_rcnn/bbox_transform.py:49: RuntimeWarning: overflow encountered in exp
+  pred_h = np.exp(dh) * heights[:, np.newaxis]
+/home/ce/Documents/py-faster-rcnn/tools/../lib/fast_rcnn/bbox_transform.py:49: RuntimeWarning: overflow encountered in multiply
+  pred_h = np.exp(dh) * heights[:, np.newaxis]
+I1231 14:52:59.068774 12829 solver.cpp:228] Iteration 78, loss = 5060.79
+I1231 14:52:59.068810 12829 solver.cpp:244]     Train net output #0: loss_bbox = 107.691 (* 1 = 107.691 loss)
+I1231 14:52:59.068835 12829 solver.cpp:244]     Train net output #1: loss_cls = 10.8963 (* 2 = 21.7926 loss)
+I1231 14:52:59.068842 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 9.21128 (* 1 = 9.21128 loss)
+I1231 14:52:59.068848 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 133.771 (* 1 = 133.771 loss)
+I1231 14:52:59.068856 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 84354.2 (* 0.01 = 843.542 loss)
+I1231 14:52:59.068862 12829 sgd_solver.cpp:106] Iteration 78, lr = 0.001
+I1231 14:53:01.133998 12829 solver.cpp:228] Iteration 79, loss = inf
+I1231 14:53:01.134034 12829 solver.cpp:244]     Train net output #0: loss_bbox = 745.351 (* 1 = 745.351 loss)
+I1231 14:53:01.134058 12829 solver.cpp:244]     Train net output #1: loss_cls = 87.3365 (* 2 = 174.673 loss)
+I1231 14:53:01.134065 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 15.3521 (* 1 = 15.3521 loss)
+I1231 14:53:01.134073 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = 3.41157e+22 (* 1 = 3.41157e+22 loss)
+I1231 14:53:01.134081 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = inf (* 0.01 = inf loss)
+I1231 14:53:01.134088 12829 sgd_solver.cpp:106] Iteration 79, lr = 0.001
+/home/ce/Documents/py-faster-rcnn/tools/../lib/rpn/proposal_layer.py:175: RuntimeWarning: invalid value encountered in greater_equal
+  keep = np.where((ws >= min_size) & (hs >= min_size))[0]
+I1231 14:53:03.205257 12829 solver.cpp:228] Iteration 80, loss = nan
+I1231 14:53:03.205310 12829 solver.cpp:244]     Train net output #0: loss_bbox = 1493.81 (* 1 = 1493.81 loss)
+I1231 14:53:03.205319 12829 solver.cpp:244]     Train net output #1: loss_cls = 87.3365 (* 2 = 174.673 loss)
+I1231 14:53:03.205327 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 87.3365 (* 1 = 87.3365 loss)
+I1231 14:53:03.205334 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = nan (* 1 = nan loss)
+I1231 14:53:03.205341 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = inf (* 0.01 = inf loss)
+I1231 14:53:03.205348 12829 sgd_solver.cpp:106] Iteration 80, lr = 0.001
+I1231 14:53:05.272649 12829 solver.cpp:228] Iteration 81, loss = nan
+I1231 14:53:05.272681 12829 solver.cpp:244]     Train net output #0: loss_bbox = nan (* 1 = nan loss)
+I1231 14:53:05.272706 12829 solver.cpp:244]     Train net output #1: loss_cls = 87.3365 (* 2 = 174.673 loss)
+I1231 14:53:05.272714 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 87.3365 (* 1 = 87.3365 loss)
+I1231 14:53:05.272720 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = nan (* 1 = nan loss)
+I1231 14:53:05.272728 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0 (* 0.01 = 0 loss)
+I1231 14:53:05.272734 12829 sgd_solver.cpp:106] Iteration 81, lr = 0.001
+I1231 14:53:07.332530 12829 solver.cpp:228] Iteration 82, loss = nan
+I1231 14:53:07.332579 12829 solver.cpp:244]     Train net output #0: loss_bbox = nan (* 1 = nan loss)
+I1231 14:53:07.332589 12829 solver.cpp:244]     Train net output #1: loss_cls = 87.3365 (* 2 = 174.673 loss)
+I1231 14:53:07.332597 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 87.3365 (* 1 = 87.3365 loss)
+I1231 14:53:07.332604 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = nan (* 1 = nan loss)
+I1231 14:53:07.332612 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0 (* 0.01 = 0 loss)
+I1231 14:53:07.332617 12829 sgd_solver.cpp:106] Iteration 82, lr = 0.001
+I1231 14:53:09.398293 12829 solver.cpp:228] Iteration 83, loss = nan
+I1231 14:53:09.398341 12829 solver.cpp:244]     Train net output #0: loss_bbox = nan (* 1 = nan loss)
+I1231 14:53:09.398366 12829 solver.cpp:244]     Train net output #1: loss_cls = 87.3365 (* 2 = 174.673 loss)
+I1231 14:53:09.398373 12829 solver.cpp:244]     Train net output #2: rpn_cls_loss = 87.3365 (* 1 = 87.3365 loss)
+I1231 14:53:09.398380 12829 solver.cpp:244]     Train net output #3: rpn_loss_bbox = nan (* 1 = nan loss)
+I1231 14:53:09.398397 12829 solver.cpp:244]     Train net output #4: st/theta_1_loss = 0 (* 0.01 = 0 loss)
+I1231 14:53:09.398403 12829 sgd_solver.cpp:106] Iteration 83, lr = 0.001
+^CTraceback (most recent call last):

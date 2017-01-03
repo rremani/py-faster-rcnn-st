@@ -8,10 +8,7 @@ layer {
   python_param {
     module: 'roi_data_layer.layer'
     layer: 'RoIDataLayer'
-    param_str: "'num_classes': 46"
-  }
-  transform_param{
-  	crop_size:600
+    param_str: "'num_classes': 15"
   }
 }
 
@@ -551,7 +548,7 @@ layer {
   python_param {
     module: 'rpn.proposal_target_layer'
     layer: 'ProposalTargetLayer'
-    param_str: "'num_classes': 46"
+    param_str: "'num_classes': 15"
   }
 }
 
@@ -575,69 +572,96 @@ layer {
 
 #######################################################
 #SPATIAL TRANSFORM NETWORK
-
 layer {
-  name: "loc_ip1"
-  type: "InnerProduct"
+  name: "st/conv"
+  type: "Convolution"
   bottom: "pool5"
-  top: "loc_ip1"
+  top: "st/conv"
+  param { lr_mult: 1.0 }
+  param { lr_mult: 2.0 }
+  convolution_param {
+    num_output: 6 #number of thetas 
+    kernel_size: 1 pad: 0 stride: 1
+    weight_filler { type: "gaussian" std: 0.01 }
+    bias_filler { type: "constant" value: 0 }
+  }
+}
+layer {
+  name: "st/conv_relu"
+  type: "ReLU"
+  bottom: "st/conv"
+  top: "st/conv"
+}
+layer {
+  name: "st/theta_1"
+  type: "InnerProduct"
+  bottom: "st/conv"
+  top: "st/pre_theta_1"
   param {
     lr_mult: 1
+    decay_mult: 100
   }
   param {
     lr_mult: 2
+    decay_mult: 100
   }
   inner_product_param {
-    num_output: 4096
+    num_output: 2
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.01
     }
     bias_filler {
       type: "constant"
     }
-    #weight_filler { type: "gaussian" std: 0.01 }
-    #bias_filler { type: "constant" value: 1 }
   }
 }
+
 layer {
-  name: "loc_relu3"
-  type: "ReLU"
-  bottom: "loc_ip1"
-  top: "loc_ip1"
-}
-layer {
-  name: "loc_reg"
-  type: "InnerProduct"
-  bottom: "loc_ip1"
-  top: "theta"
-  inner_product_param {
-    num_output: 6
-    #weight_filler {
-    #  type: "constant"
-    #  value: 0
-    #}
-    #bias_filler {
-    #  type: "file"
-    #  file: "examples/mnist_tests/bias_init.txt"
-    #}
-    weight_filler { type: "gaussian" std: 0.01 }
-    bias_filler { type: "constant" value: 1 }
+  name: "st/theta_1_loss"
+  type: "LocLoss"
+  bottom: "st/pre_theta_1"
+  top: "st/theta_1_loss"
+  loc_loss_param {
+    threshold: 0.2
   }
+  loss_weight: 0.01
 }
 layer {
-  name: "st_layer"
+  name: "st_1"
   type: "SpatialTransformer"
-  bottom: "pool5"
-  bottom: "theta"
-  top: "st_output"
+  bottom: "st/conv"
+  bottom: "st/pre_theta_1"
+  top: "inc1/data"
+  st_param {
+    theta_1_1: 0.2
+    theta_1_2: 0.1
+    theta_2_1: 0.1
+    theta_2_2: 0.2
+    #theta_1_3: 0.1
+    #theta_2_3: 0.1
+  }
+}
+layer {
+  name: "st/conv_out"
+  type: "Convolution"
+  bottom: "inc1/data"
+  top: "st/conv_out"
+  param { lr_mult: 1.0 }
+  param { lr_mult: 2.0 }
+  convolution_param {
+    num_output: 512 #originalpool5 out size 
+    kernel_size: 1 pad: 0 stride: 1
+    weight_filler { type: "gaussian" std: 0.01 }
+    bias_filler { type: "constant" value: 0 }
+  }
 }
 ######################################################
-
 
 layer {
   name: "fc6"
   type: "InnerProduct"
-  bottom: "st_output"
+  bottom: "st/conv_out"
   top: "fc6"
   param {
     lr_mult: 1
@@ -712,7 +736,7 @@ layer {
     lr_mult: 2
   }
   inner_product_param {
-    num_output: 46
+    num_output: 15
     weight_filler {
       type: "gaussian"
       std: 0.01
@@ -735,7 +759,7 @@ layer {
     lr_mult: 2
   }
   inner_product_param {
-    num_output: 184
+    num_output: 60
     weight_filler {
       type: "gaussian"
       std: 0.001
