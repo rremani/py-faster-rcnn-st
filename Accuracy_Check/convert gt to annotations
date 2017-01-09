@@ -1,0 +1,15 @@
+import os
+
+filename='GTSDB/data/Annotations/gt_orginal.txt'
+with open(filename) as f:
+    data=f.readline()
+    while(data):
+        name=data.split(';')[0].split('.')[0]
+        path=os.path.join('GTSDB/data', 'Annotations', name + '.txt')
+        with open(path,'a') as f1:
+            f1.write(data)
+        f1.close()
+        data=f.readline()
+
+f.close()
+f1.close()
