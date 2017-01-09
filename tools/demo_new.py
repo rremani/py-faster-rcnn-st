@@ -185,7 +185,7 @@ def demo(net, image_name,path,out_file):
     #print ('Detection took {:.3f}s for {:d} object proposals').format(timer.total_time, boxes.shape[0])
 
 
-
+    
     # Visualize detections for each class
     CONF_THRESH = 0.5
     NMS_THRESH = 0.3

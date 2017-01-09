@@ -188,32 +188,10 @@ def checkAccuracy(annotations, image_detections):
     		return INCORRECT
     	error = np.mean( true != pred )
     	print 'error: ',error
-    	if (error > 10): 
+    	if (error > 0.8): 
     		print "high inaccuracy"
     		return INCORRECT
     return 0
-
-
-# def softmax_loss(x, y):
-#   """
-#   Computes the loss and gradient for softmax classification.
-#   Inputs:
-#   - x: Input data, of shape (N, C) where x[i, j] is the score for the jth class
-#     for the ith input.
-#   - y: Vector of labels, of shape (N,) where y[i] is the label for x[i] and
-#     0 <= y[i] < C
-#   Returns a tuple of:
-#   - loss: Scalar giving the loss
-#   - dx: Gradient of the loss with respect to x
-#   """
-#   probs = np.exp(x - np.max(x, axis=1, keepdims=True))
-#   probs /= np.sum(probs, axis=1, keepdims=True)
-#   N = x.shape[0]
-#   loss = -np.sum(np.log(probs[np.arange(N), y])) / N
-#   dx = probs.copy()
-#   dx[np.arange(N), y] -= 1
-#   dx /= N
-# return loss, dx
 
 def get_annotations(image_name):
     testAnnotationsPath = os.path.join(cfg.DATA_DIR, 'MMI','data','test_Annotations')
@@ -326,11 +304,6 @@ if __name__ == '__main__':
        # plt.show()
        # continue
 
-		# #TBD
-
-
-
-#     os.system()
 '''
 for layer in net.layers:
     for blob in layer.blobs:

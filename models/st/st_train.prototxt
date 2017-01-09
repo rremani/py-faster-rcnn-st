@@ -1,0 +1,27 @@
+name: "stn"
+input: "data"
+input_shape {
+  dim: 1
+  dim: 3
+  dim: 227
+  dim: 227
+}
+input: "theta"
+input_shape {
+  dim: 1
+  dim: 2
+}
+layer {
+  name: "st_1"
+  type: "SpatialTransformer"
+  bottom: "data"
+  bottom: "theta"
+  top: "transformed"
+  st_param {
+    to_compute_dU: false
+    theta_1_1: 0.5
+    theta_1_2: 0.0
+    theta_2_1: 0.0
+    theta_2_2: 0.5
+  }
+}

@@ -1,0 +1,5 @@
+>> /.../output.txt 2>&1
+
+to get the plot:
+
+python progress_plot.py /.../output.txt
