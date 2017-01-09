@@ -24,22 +24,21 @@ class gtsdb(imdb):
         self._image_set = image_set
         self._devkit_path = devkit_path
         self._data_path = os.path.join(self._devkit_path, 'data')
-        # self._classes = ('__background__', # always index 0
-        #                  'Speed Limit 30',
-        #                  'Speed Limit 50',
-        #                  'Speed Limit 60',
-        #                  'Speed Limit 70',
-        #                  'Speed Limit 80',
-        #                  'Speed Limit 100',
-        #                  'Speed Limit 120',
-        #                  'no overtaking',
-        #                  'no overtaking trucks',
-        #                  'priority at next intersection',
-        #                  'priority road',
-        #                  'give way',
-        #                  'danger',
-        #                  'construction')
-        self._classes = ('__background__', 'no overtaking', 'Speed Limit 50', 'Speed Limit 100', 'Speed Limit 30', 'priority at next intersection', 'Speed Limit 60', 'danger', 'no overtaking trucks', 'construction', 'Speed Limit 80', 'Speed Limit 70', 'Speed Limit 120', 'give way', 'priority road')
+        self._classes = ('__background__', # always index 0
+                         'speed limit 20',
+                         'speed limit 30',
+                         'speed limit 50',
+                         'speed limit 60',
+                         'speed limit 70',
+                         'speed limit 80',
+                         'restriction ends 80 (other)',
+                         'speed limit 100',
+                         'speed limit 120',
+                         'no overtaking',
+                         'no overtaking (trucks)',
+                         'no traffic both ways',
+                         'no trucks')
+        #self._classes = ('__background__', 'no overtaking', 'Speed Limit 50', 'Speed Limit 100', 'Speed Limit 30', 'priority at next intersection', 'Speed Limit 60', 'danger', 'no overtaking trucks', 'construction', 'Speed Limit 80', 'Speed Limit 70', 'Speed Limit 120', 'give way', 'priority road')
         self._class_to_ind = dict(zip(self.classes, xrange(self.num_classes)))
         self._image_ext = ['.jpg', '.png']
         self._image_index = self._load_image_set_index()
