@@ -3,3 +3,4 @@ data/*
 Aishwarya/*
 caffe-fast-rcnn_/*
 output/*
+!*.ipynb
