@@ -1,0 +1,50 @@
+# This Doc lists important points from Practical Methodology by Youshua Bengio
+
+1. Major points while learning from data using machine learning models:
+   # Gather more data
+   # increase or decrease model capacity
+   # Add or remove regularizing features
+   # Improve optimization of a model
+   ## Improve approximate inference of the model
+
+2. Practical design for choosing best machine learning model
+  # What error metric to use which is driven by the problem being dealt
+  # Establish  a working end-end pipeline
+  # Disgonise which components are working worst than expected and whether it is due to over fitting or under fitting etc.
+  # Based on the diagonisis repeatedly adjust hyperparameters
+
+3. One must determine the value of decreasing the error further and weigh it against the cost of procuring the data.
+
+4. We must have some error rate in our minds that is necessary for an application to be safe, cost effective and appealing to the consumers.
+
+5. Without clearly defined goals it would be difficult to tell if machine learning algorithm is progressing or not.
+
+6. Coverage can be traded off with accuracy as it deals with the fraction of examples for which an ML algorithm is able to produce a response. Ultimate thing is to reduce the human effort with best accuracy by reducing the number of examples to be treated by humans.
+
+7. How to choose a baseline model:
+
+   # If your problem lies in machine translation, object recognition, Speech recognition then you are good to start with basic deep model.
+   # It is common to use pre trained models
+   # A resonable choice for optimization is SGD with momentum or Adam.
+   # If optimization appears to be problamatic, batch normalization should be introduced early.
+
+8. Determining whether to gather more data or not?
+   
+   # First determine the acceptable accuracy for the data
+   # If performance on traning data is poor, means the model is not using the train data that is already available.
+   # Try increasing more layers in the model or adding more hidden units to the layers.
+   # It's better to get more data if an algorithm is not producing desired results rather than try new algorithms.
+   # If the test set performance is much worse than the training set then gathering more data seems the effective solution.
+   # Alternative to gathering more data is reducing the size of the model or by adjusting the hyperparameters like weight decay or by adding regularizations strategies like droupout.
+   # It is helpful to plot curves between training set size and generalization error. This can help to estimate how much more training data is required to achieve certain level of performance.
+   # Adding a small fraction of examples to the training data would not effect the generalization error much, but rather experimenting with the training data set size on a logarthimic scale for example by doubling the number of examples between consecutive experiments.
+   # Finally if gathering more data is note feasible then last resort remains to improve the learning algorithm itself.
+9. Selecting Hyperparameters
+   # Deep laerning algorithms contains many hyperparameters, some effect the time and memory cost of running the algorithm and others being affecting the quality of the model being recovered.
+   # There are two different ways to select the hyperparameters, one through manually and the other automatically. One method needs understanding between different hyperparameters while the other is computationally costly.
+   # To manually set hyperparameters one must understand relation between training error, generalization error, time consumed etc. Goal is to find the lowest generalization error subject to memory and time.
+   # Primary goal is to adjust the effective capacity of the model to match the complexity of the task.
+     ## Effective capacity of the model are: Representational capacity of the model; The ability to minimise the cost function; Degree to which cost function and training procedure regularize the model.
+     ## Representational capacity about a model is the number of layers and hidden units it contains. The more the layers and hidden units the higher is the representational capacity of the model - it is capable of representing more complex functions.
+     ## The generalization curve is U shaped curve between test error and hyperparameter. At one extreme where hyperparameter value is at low capacity the generalization error is more which means a underfitted curve and whereas at the other end the generalization curve is at other extreme where hyperparameter is having high capacity, somewhere between both these extremes lies an optimal hyperparameters value.
+     ## 
