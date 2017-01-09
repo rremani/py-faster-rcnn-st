@@ -3,4 +3,4 @@ data/*
 Aishwarya/*
 caffe-fast-rcnn_/*
 output/*
-!*.ipynb
+!data/GTSDB/data/Training%20Data%20Preparation.ipynb 
