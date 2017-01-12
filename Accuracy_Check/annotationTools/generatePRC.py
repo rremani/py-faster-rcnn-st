@@ -48,14 +48,14 @@ def interpolateResults(results, numPoints = 101):
         fpCounts = np.linspace(pair[0].fpCount, pair[1].fpCount, points)
         precisions = tpCounts/(tpCounts+fpCounts)
         recalls = tpCounts/numAnnotations
-        
+
         # Add the original measurement point to the output followed by the interpolated ones
         interpolated.append(pair[0])
         interpolated += [MatchStats(numAnnotations, *x, widthsFound = []) for x in zip(tpCounts, fpCounts, precisions, recalls)[1:-1]]
 
     interpolated[-1] = sortedResults[-1]
     return interpolated
-    
+
 
 def computeAUCs(resultSets, plot = True, plotTitle = "", legendNames = None, savePlot = None, interpolate = True):
     legend = []
@@ -78,8 +78,9 @@ def computeAUCs(resultSets, plot = True, plotTitle = "", legendNames = None, sav
             if precisions[-1] != 1:
                 precisions = precisions + [1]
                 recalls = recalls + [0]
-                
+        print recalls,precisions        
         auc = integrate.cumtrapz(recalls, precisions)*100
+        print auc
         aucs.append(auc[-1])
         if plot or savePlot != None:
             # Endpoints for plotting purposes only
@@ -131,7 +132,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate a precision-recall curve and compute the area under the curve (AUC) from multiple detection results and an annotation file.')
-    
+
     parser.add_argument('-gt', '--groundTruth', metavar='annotations.csv', type=str, help='The path to the csv-file containing ground truth annotations.')
     parser.add_argument('-d', '--detectionPaths', metavar='detections.csv', nargs='+', action='append', type=str, help='Paths to multiple the csv-files containing detections. Each line formatted as filenameNoPath;upperLeftX;upperLeftY;lowerRightX;lowerRightY. No header line. The files should be produced with different parameters in order to create multiple precision/recall data points. This flag can be given several times to plot multiple detectors against the ground truth.')
     parser.add_argument('-t', '--title', default="PRC plot", metavar="\"PRC plot\"", help='Title put on the plot.')
@@ -143,12 +144,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(args)
-
-
-
-
-
-
-
-
-

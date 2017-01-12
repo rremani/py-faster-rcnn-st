@@ -16,6 +16,7 @@ def computeMatchStatistics(annotations, detections, pascal = 0.5, sizeMinimum = 
     # Remove any annotations that are too small:
     for annotation in workAnnotations:
         annFields = annotation.split(';')
+        #print annFields
         if sizeMinimum != None and (int(annFields[4])-int(annFields[2]) < sizeMinimum[0] or int(annFields[5])-int(annFields[3]) < sizeMinimum[1]):
             workAnnotations.remove(annotation)
             numAnnotations -= 1
@@ -27,10 +28,14 @@ def computeMatchStatistics(annotations, detections, pascal = 0.5, sizeMinimum = 
     falsePositives = []
     for detection in detections:
         fields = detection.split(';')
+        #print fields
         potentialAnnotations = [line for line in workAnnotations if fields[0] in line]
+        
         match = False
         for annotation in potentialAnnotations:
+            #print annotation
             annFields = annotation.split(';')
+            #   print annFields
             # Compute intersection
             left = max(int(annFields[2]), int(fields[1]))
             right = min(int(annFields[4]), int(fields[3]))
@@ -47,10 +52,10 @@ def computeMatchStatistics(annotations, detections, pascal = 0.5, sizeMinimum = 
                         intersectionArea
             # Compute Pascal measure
             pascalMeasure = intersectionArea/unionArea
-            match = (pascalMeasure > pascal)            
+            match = (pascalMeasure > pascal)
             if match:
                 workAnnotations.remove(annotation)
-                break   
+                break
 
         if match:
             tpCount += 1
@@ -71,7 +76,7 @@ def printDetailedStats(falsePositives, falseNegatives):
 def printFalseNegatives(falseNegatives, header):
     sys.stdout.write(header)
     sys.stdout.write('\n'.join([x.strip() for x in falseNegatives]))
-        
+
 def main(args):
     if not os.path.isfile(args.detectionPath):
         print("Error: The given detection file does not exist.")
@@ -86,7 +91,7 @@ def main(args):
     if not (0 < args.pascal <= 1.0):
         print("Error: The Pascal overlap criterion must be > 0 and <= 1.0")
         exit()
-        
+
     sizeMinimum = None
     if args.sizeMinimum != None and not re.match('[0-9]+x[0-9]+', args.sizeMinimum):
         print("Error: The size must be in the format 20x20, where the numbers can be any integer, regex match [0-9]+x[0-9]+. First number is width.")
@@ -107,7 +112,7 @@ def main(args):
         exit()
     if args.verbose:
         printDetailedStats(falsePositives, falseNegatives)
-    
+
     print('------')
     print('Number of annotations:\t%d' % statistics.numAnnotations)
     print('------')
