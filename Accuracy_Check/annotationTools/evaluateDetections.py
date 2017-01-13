@@ -26,32 +26,36 @@ def computeMatchStatistics(annotations, detections, pascal = 0.5, sizeMinimum = 
     id = 0
     widthsFound = []
     falsePositives = []
+    #print workAnnotations
     for detection in detections:
         fields = detection.split(';')
         #print fields
         potentialAnnotations = [line for line in workAnnotations if fields[0] in line]
-        
+        #print potentialAnnotations
         match = False
         for annotation in potentialAnnotations:
             #print annotation
             annFields = annotation.split(';')
-            #   print annFields
+            #print annFields,fields
             # Compute intersection
             left = max(int(annFields[2]), int(fields[1]))
             right = min(int(annFields[4]), int(fields[3]))
             top = max(int(annFields[3]),int(fields[2]))
             bottom = min(int(annFields[5]),int(fields[4]))
-            #print(left,right,top,bottom)
+            print(left,right,top,bottom)
             if left < right and top < bottom:
                 intersectionArea = (right-left)*(bottom-top)
+                print intersectionArea
             else:
                 intersectionArea = 0
             # Compute union as the combined area of the two rectangles minus the intersection
             unionArea = (int(annFields[4])-int(annFields[2]))*(int(annFields[5])-int(annFields[3])) + \
                         (int(fields[3])-int(fields[1]))*(int(fields[4])-int(fields[2])) - \
                         intersectionArea
+            print unionArea
             # Compute Pascal measure
             pascalMeasure = intersectionArea/unionArea
+            print pascalMeasure
             match = (pascalMeasure > pascal)
             if match:
                 workAnnotations.remove(annotation)
