@@ -111,7 +111,7 @@ def im_detect(net, im, boxes=None):
     Arguments:
         net (caffe.Net): Fast R-CNN network to use
         im (ndarray): color image to test (in BGR order)
-        boxes (ndarray): R x 4 array of object proposals or None (for RPN)
+       boxes (ndarray): R x 4 array of object proposals or None (for RPN)
 
     Returns:
         scores (ndarray): R x K array of object class scores (K includes
@@ -225,7 +225,7 @@ def apply_nms(all_boxes, thresh):
             nms_boxes[cls_ind][im_ind] = dets[keep, :].copy()
     return nms_boxes
 
-def test_net(net, imdb, max_per_image=100, thresh=0.05, vis=False):
+def test_net(net, imdb, max_per_image=100, thresh=0.5, vis=False):
     """Test a Fast R-CNN network on an image database."""
     num_images = len(imdb.image_index)
     # all detections are collected into:

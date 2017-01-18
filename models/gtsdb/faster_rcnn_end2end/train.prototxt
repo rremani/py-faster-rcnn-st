@@ -8,7 +8,7 @@ layer {
   python_param {
     module: 'roi_data_layer.layer'
     layer: 'RoIDataLayer'
-    param_str: "'num_classes': 14"
+    param_str: "'num_classes': 5"
   }
 }
 
@@ -545,7 +545,7 @@ layer {
   python_param {
     module: 'rpn.proposal_target_layer'
     layer: 'ProposalTargetLayer'
-    param_str: "'num_classes': 14"
+    param_str: "'num_classes': 5"
   }
 }
 
@@ -644,7 +644,7 @@ layer {
     lr_mult: 2
   }
   inner_product_param {
-    num_output: 14
+    num_output: 5
     weight_filler {
       type: "gaussian"
       std: 0.01
@@ -667,7 +667,7 @@ layer {
     lr_mult: 2
   }
   inner_product_param {
-    num_output: 56
+    num_output: 20
     weight_filler {
       type: "gaussian"
       std: 0.001
@@ -688,6 +688,7 @@ layer {
   top: "loss_cls"
   loss_weight: 2
 }
+
 layer {
   name: "loss_bbox"
   type: "SmoothL1Loss"
