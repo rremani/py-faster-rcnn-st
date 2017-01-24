@@ -1,0 +1,1 @@
+nvidia-docker run -ti -v /home/ce/Downloads/mnt/:/crnn  rremani/cuda_crnn_torch_v2 /bin/bash

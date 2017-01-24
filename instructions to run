@@ -25,5 +25,12 @@ to train the CNN model
 
 to test the CNN model
 to create test.txt use accuracy notebook
+
+# Delete anno.pkl cache from your data folder for running again on different set of images
+
+./tools/test_net.py --gpu 0 --def /home/ce/Documents/py-faster-rcnn/models/gtsdb/faster_rcnn_end2end/test.prototxt  --imdb gtsdb_test --cfg experiments/cfgs/faster_rcnn_end2end.yml --net /home/ce/Documents/py-faster-rcnn/data/faster_rcnn_models/gtsdb_v1_iter_60000.caffemodel  --comp
+
+
+#Use for creating output in the form of txt and images with patch
 ./tools/demo.py --gpu 0 --net mmi --file /home/rishabh/py-faster-rcnn/data/MMI/data/test.txt --out_file out_mmi.txt
 
